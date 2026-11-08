@@ -2,715 +2,1692 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101010">
-  <meta name="description" content="M2J Auto Detailing in Cincinnati, Ohio. Faith-driven detailing with transparent starting prices for exterior, interior, premium interior and full detail packages.">
-  <title>M2J Auto Detailing | Driven by Faith</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --red: #e53935;
-      --dark-red: #ba2525;
-      --bg: #101010;
-      --surface: #1b1b1b;
-      --muted: #bcbcbc;
-      --line: #343434;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: #fff;
-      font-family: Montserrat, Arial, sans-serif;
-      line-height: 1.65;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    button { font: inherit; }
-    .container { width: min(1140px, 90%); margin: auto; }
-    .section { padding: 85px 0; }
-    .eyebrow {
-      color: var(--red);
-      font-weight: 800;
-      letter-spacing: 2px;
-      font-size: .76rem;
-      text-transform: uppercase;
-    }
-    h1, h2, h3, p { margin-top: 0; }
-    h2 { font-size: clamp(1.9rem, 4vw, 2.7rem); line-height: 1.2; }
-    h2 span, .brand span, .red { color: var(--red); }
-    .muted { color: var(--muted); }
-    .center { text-align: center; }
-    .section-intro {
-      max-width: 700px;
-      margin: 0 auto 40px;
-      color: var(--muted);
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 20px;
-      border-radius: 5px;
-      font-weight: 800;
-      font-size: .82rem;
-      border: 1px solid #777;
-      transition: background .2s, border-color .2s;
-      text-align: center;
-      cursor: pointer;
-    }
-    .btn:hover, .btn:focus-visible { border-color: var(--red); }
-    .btn-red { background: var(--red); border-color: var(--red); color: #fff; }
-    .btn-red:hover, .btn-red:focus-visible { background: var(--dark-red); }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101010">
+<meta name="description" content="M2J Auto Detailing in Cincinnati, Ohio. Faith-driven auto detailing.">
+<title>M2J Auto Detailing | Driven by Faith</title>
 
-    /* NAVIGATION */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: #101010f5;
-      border-bottom: 1px solid #292929;
-    }
-    nav {
-      min-height: 76px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-    }
-    .brand { font-size: 1.65rem; font-weight: 900; white-space: nowrap; }
-    .nav-links { display: flex; align-items: center; gap: 21px; }
-    .nav-links a { font-size: .75rem; font-weight: 800; }
-    .nav-links a:hover { color: var(--red); }
-    .nav-links .nav-cta {
-      background: var(--red);
-      padding: 10px 15px;
-      border-radius: 5px;
-      color: #fff;
-    }
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: 1px solid #555;
-      color: #fff;
-      border-radius: 5px;
-      padding: 6px 11px;
-      font-size: 1.3rem;
-      cursor: pointer;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    /* HERO */
-    .hero {
-      min-height: 650px;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(90deg, #000f, #0009),
-        url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85')
-        center/cover;
-    }
-    .hero-inner { padding: 95px 0; }
-    .hero h1 {
-      font-size: clamp(2.7rem, 7vw, 5rem);
-      font-weight: 900;
-      line-height: 1.07;
-      margin: 18px 0;
-    }
-    .hero h3 { font-size: clamp(1rem, 2.3vw, 1.5rem); }
-    .hero-description { max-width: 620px; color: #ddd; font-size: .88rem; }
-    .hero-buttons { display: flex; flex-wrap: wrap; gap: 13px; margin: 27px 0 38px; }
-    .verse {
-      border-left: 3px solid var(--red);
-      padding-left: 18px;
-      max-width: 610px;
-      font-style: italic;
-      color: #ddd;
-      font-size: .82rem;
-    }
-    .verse strong { display: block; color: #fff; margin-top: 8px; font-style: normal; }
-    .values { background: var(--surface); border-bottom: 1px solid var(--line); padding: 25px 0; }
-    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; text-align: center; }
-    .values-grid div { font-size: .8rem; font-weight: 800; letter-spacing: 1px; }
-    .values-grid span { color: var(--red); margin-right: 8px; }
+<style>
+:root {
+  --red: #e53935;
+  --dark-red: #ba2525;
+  --black: #101010;
+  --dark: #191919;
+  --card: #222;
+  --white: #fff;
+  --muted: #bcbcbc;
+}
 
-    /* PRICING */
-    .pricing-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-    .package {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      background: #202020;
-      border: 1px solid #393939;
-      border-radius: 10px;
-      padding: 32px;
-    }
-    .package.featured { border: 2px solid var(--red); }
-    .package-badge {
-      position: absolute;
-      right: 18px;
-      top: -14px;
-      background: var(--red);
-      border-radius: 4px;
-      padding: 6px 12px;
-      font-size: .65rem;
-      font-weight: 800;
-    }
-    .package-icon { font-size: 1.8rem; margin-bottom: 13px; }
-    .package h3 { font-size: 1.3rem; margin-bottom: 5px; }
-    .price { color: var(--red); font-size: 2.7rem; font-weight: 900; line-height: 1.2; margin: 12px 0; }
-    .price sup { font-size: 1rem; }
-    .price small { display: block; font-size: .65rem; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
-    .package-description { color: var(--muted); font-size: .81rem; }
-    .package ul { padding: 0; list-style: none; margin: 15px 0 25px; }
-    .package li { padding: 5px 0; color: #ddd; font-size: .79rem; }
-    .package li::before { content: "✓"; color: var(--red); font-weight: 900; margin-right: 9px; }
-    .package .btn { margin-top: auto; }
-    .saving { color: var(--red); font-size: .75rem; font-weight: 800; margin: 0 0 20px; }
-    .disclaimer {
-      background: var(--surface);
-      border-left: 4px solid var(--red);
-      padding: 23px;
-      border-radius: 5px;
-      margin-top: 32px;
-      color: #ccc;
-      font-size: .78rem;
-    }
-    .disclaimer strong { color: var(--red); }
+* {
+  box-sizing: border-box;
+}
 
-    /* ABOUT */
-    .alt-section { background: var(--surface); }
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 50px; }
-    .two-col img { width: 100%; height: 400px; object-fit: cover; border-radius: 8px; }
-    .two-col p { color: var(--muted); font-size: .88rem; }
-    .highlight { border-left: 3px solid var(--red); background: #262626; padding: 16px; font-weight: 800; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
 
-    /* FAITH */
-    .faith-panel {
-      max-width: 900px;
-      margin: auto;
-      padding: 52px 40px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-top: 4px solid var(--red);
-      border-radius: 9px;
-      text-align: center;
-    }
-    .faith-cross { color: var(--red); font-size: 2.8rem; }
-    .faith-panel p { color: var(--muted); font-size: .88rem; max-width: 700px; margin: 0 auto 18px; }
-    .faith-quote { border-top: 1px solid #444; padding-top: 25px; margin-top: 30px; font-style: italic; }
-    .faith-reference { color: var(--red); font-size: .75rem; font-weight: 800; }
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.7;
+}
 
-    /* GALLERY */
-    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .gallery-grid img { width: 100%; height: 250px; object-fit: cover; border-radius: 7px; }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    /* BOOKING */
-    .booking-layout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(260px, .85fr); gap: 26px; align-items: start; }
-    .booking-card, .booking-aside {
-      background: #222;
-      border: 1px solid #393939;
-      border-radius: 10px;
-      padding: 30px;
-    }
-    .booking-card h3, .booking-aside h3 { margin-bottom: 8px; }
-    .booking-card > p, .booking-aside p { color: var(--muted); font-size: .8rem; }
-    .booking-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 25px; }
-    .booking-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
-    .booking-field.full { grid-column: 1 / -1; }
-    .booking-field label { font-size: .74rem; font-weight: 800; }
-    .booking-field input, .booking-field select, .booking-field textarea {
-      width: 100%;
-      min-height: 44px;
-      border: 1px solid #555;
-      background: #141414;
-      color: #fff;
-      border-radius: 5px;
-      padding: 11px 12px;
-      font: inherit;
-      font-size: .82rem;
-    }
-    .booking-field textarea { min-height: 115px; resize: vertical; }
-    .booking-field input:focus, .booking-field select:focus, .booking-field textarea:focus {
-      outline: 2px solid var(--red);
-      outline-offset: 1px;
-    }
-    .booking-note { color: #ccc; font-size: .75rem; margin: 22px 0; }
-    .booking-privacy { font-size: .71rem !important; margin: 15px 0 0; }
-    .booking-submit { width: 100%; }
-    .estimate {
-      font-size: 2.8rem;
-      color: var(--red);
-      font-weight: 900;
-      margin: 8px 0;
-    }
-    .booking-steps { padding-left: 19px; color: #ddd; font-size: .8rem; }
-    .booking-steps li { padding: 5px 0; }
-    .booking-aside .small-print { border-top: 1px solid #444; margin-top: 25px; padding-top: 20px; }
-    .booking-notice { color: #ccc; font-size: .8rem; margin: 15px 0 0; }
+img {
+  display: block;
+  max-width: 100%;
+}
 
-    /* CONTACT */
-    .contact-box { background: #222; border: 1px solid #393939; border-radius: 10px; padding: 32px; }
-    .contact-box p { color: var(--muted); font-size: .85rem; }
-    .contact-box .btn { display: flex; margin-top: 12px; }
-    .contact-info { margin: 20px 0; font-size: .84rem; overflow-wrap: anywhere; }
-    .contact-info strong { display: block; color: var(--red); font-size: .7rem; }
-    .contact-info a:hover { color: var(--red); }
+button, input, select, textarea {
+  font: inherit;
+}
 
-    /* FOOTER */
-    footer { background: #080808; text-align: center; padding: 38px 0; border-top: 1px solid #292929; }
-    footer p { font-size: .72rem; color: #aaa; margin: 7px 0; }
-    .footer-brand { font-size: 1.5rem; font-weight: 900; }
+.container {
+  width: min(1150px, 90%);
+  margin: auto;
+}
 
-    @media (max-width: 900px) {
-      .menu-toggle { display: block; }
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 76px;
-        left: 0;
-        right: 0;
-        padding: 15px 5%;
-        background: #141414;
-        border-bottom: 1px solid #333;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-      }
-      .nav-links.open { display: flex; }
-      .nav-links a { padding: 12px; }
-      .two-col, .booking-layout { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 650px) {
-      .section { padding: 65px 0; }
-      .pricing-grid, .gallery-grid, .booking-fields { grid-template-columns: 1fr; }
-      .booking-field.full { grid-column: auto; }
-      .values-grid { gap: 6px; }
-      .values-grid div { font-size: .65rem; }
-      .package, .booking-card, .booking-aside, .contact-box { padding: 23px; }
-      .faith-panel { padding: 35px 20px; }
-      .two-col img { height: 300px; }
-    }
-  </style>
+section {
+  padding: 85px 0;
+}
+
+.red {
+  color: var(--red);
+}
+
+.center {
+  text-align: center;
+}
+
+.section-label {
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(29px, 4vw, 43px);
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+
+.section-description {
+  color: var(--muted);
+  max-width: 680px;
+  margin: 0 auto 45px;
+  font-size: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 25px;
+  border: 1px solid #777;
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  border-color: var(--red);
+}
+
+.btn-red {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.btn-red:hover {
+  background: var(--dark-red);
+}
+
+.btn-outline {
+  background: transparent;
+}
+
+/* HEADER */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(13,13,13,0.97);
+  border-bottom: 1px solid #303030;
+}
+
+.nav {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* CUSTOM LOGO */
+
+.header-logo {
+  width: 125px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.hero-logo {
+  width: min(450px, 100%);
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  width: 220px;
+  height: auto;
+  margin: 0 auto 15px;
+}
+
+/* NAVIGATION */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  font-size: 12px;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--red);
+}
+
+.nav-links .contact-nav {
+  background: var(--red);
+  padding: 11px 16px;
+  border-radius: 4px;
+  color: white;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid #555;
+  border-radius: 5px;
+  color: white;
+  padding: 7px 12px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.95), rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+}
+
+.hero-content {
+  padding: 80px 0;
+}
+
+.hero-label {
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 15px 0;
+}
+
+.hero h2 {
+  font-size: clamp(18px, 2.5vw, 26px);
+  margin: 20px 0;
+}
+
+.hero p {
+  color: #ddd;
+  max-width: 600px;
+  font-size: 14px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.hero-verse {
+  max-width: 600px;
+  margin-top: 40px;
+  padding-left: 18px;
+  border-left: 3px solid var(--red);
+  color: #ddd;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.hero-verse strong {
+  display: block;
+  color: white;
+  font-size: 11px;
+  font-style: normal;
+  margin-top: 8px;
+}
+
+/* VALUES */
+
+.values {
+  background: #1b1b1b;
+  padding: 30px 0;
+  border-bottom: 1px solid #333;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.value {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.value span {
+  color: var(--red);
+  margin-right: 8px;
+}
+
+/* PRICING */
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.package {
+  position: relative;
+  background: var(--card);
+  border: 1px solid #383838;
+  border-radius: 10px;
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+}
+
+.package:hover {
+  border-color: var(--red);
+  transform: translateY(-3px);
+}
+
+.package.featured {
+  border: 2px solid var(--red);
+}
+
+.package-badge {
+  position: absolute;
+  right: 20px;
+  top: -15px;
+  background: var(--red);
+  padding: 7px 14px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.package-icon {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.package h3 {
+  font-size: 21px;
+  margin: 0 0 10px;
+}
+
+.price {
+  color: var(--red);
+  font-size: 43px;
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 10px 0 18px;
+}
+
+.price sup {
+  font-size: 17px;
+}
+
+.price small {
+  display: block;
+  color: #aaa;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 7px;
+}
+
+.package-description {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.package ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px;
+}
+
+.package li {
+  font-size: 12px;
+  color: #ddd;
+  padding: 7px 0;
+}
+
+.package li::before {
+  content: "✓";
+  color: var(--red);
+  font-weight: 900;
+  margin-right: 9px;
+}
+
+.package .btn {
+  margin-top: auto;
+}
+
+.package-saving {
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.disclaimer {
+  background: #1c1c1c;
+  border-left: 4px solid var(--red);
+  border-radius: 5px;
+  margin-top: 35px;
+  padding: 25px;
+}
+
+.disclaimer p {
+  color: #ccc;
+  font-size: 12px;
+  margin: 0;
+}
+
+.disclaimer strong {
+  color: var(--red);
+}
+
+/* ABOUT */
+
+.about {
+  background: var(--dark);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.about-text p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.about-highlight {
+  background: #242424;
+  border-left: 3px solid var(--red);
+  padding: 15px 18px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* FAITH */
+
+.faith-panel {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  padding: 55px 45px;
+  background: #1b1b1b;
+  border: 1px solid #353535;
+  border-top: 4px solid var(--red);
+  border-radius: 9px;
+}
+
+.faith-cross {
+  font-size: 46px;
+  color: var(--red);
+}
+
+.faith-panel p {
+  color: #ccc;
+  font-size: 14px;
+  max-width: 690px;
+  margin: 0 auto 20px;
+}
+
+.faith-quote {
+  border-top: 1px solid #444;
+  padding-top: 28px;
+  margin-top: 30px;
+  font-size: 17px;
+  font-style: italic;
+}
+
+.faith-reference {
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 800;
+  margin-top: 12px;
+}
+
+/* GALLERY */
+
+.gallery {
+  background: var(--dark);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.gallery-item {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* BOOKING FORM */
+
+.booking {
+  background: #141414;
+}
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.booking-form,
+.booking-aside {
+  background: #222;
+  border: 1px solid #383838;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.booking-form h3,
+.booking-aside h3 {
+  margin-top: 0;
+}
+
+.booking-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.booking-field {
+  min-width: 0;
+}
+
+.booking-field.full {
+  grid-column: 1 / -1;
+}
+
+.booking-field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.booking-field input,
+.booking-field select,
+.booking-field textarea {
+  width: 100%;
+  min-height: 45px;
+  background: #121212;
+  color: white;
+  border: 1px solid #575757;
+  border-radius: 5px;
+  padding: 12px;
+  font-size: 13px;
+}
+
+.booking-field textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.booking-field input:focus,
+.booking-field select:focus,
+.booking-field textarea:focus {
+  outline: 2px solid var(--red);
+  outline-offset: 1px;
+}
+
+.booking-note {
+  color: #bbb;
+  font-size: 12px;
+  margin: 22px 0;
+}
+
+.booking-privacy {
+  font-size: 11px;
+  color: #aaa;
+}
+
+.booking-submit {
+  width: 100%;
+}
+
+.estimate {
+  color: var(--red);
+  font-size: 43px;
+  font-weight: 900;
+}
+
+.booking-aside p,
+.booking-aside li {
+  color: #ccc;
+  font-size: 13px;
+}
+
+.booking-aside ol {
+  padding-left: 20px;
+}
+
+.booking-aside li {
+  margin-bottom: 12px;
+}
+
+/* CONTACT */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.contact-text {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.contact-detail {
+  font-size: 13px;
+  margin: 18px 0;
+  overflow-wrap: anywhere;
+}
+
+.contact-detail strong {
+  display: block;
+  color: var(--red);
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+.contact-detail a:hover {
+  color: var(--red);
+}
+
+.contact-box {
+  background: var(--card);
+  border: 1px solid #383838;
+  border-radius: 9px;
+  padding: 38px;
+}
+
+.contact-box p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.contact-box .btn {
+  display: flex;
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #080808;
+  border-top: 1px solid #292929;
+  padding: 40px 0;
+  text-align: center;
+}
+
+footer p {
+  color: #999;
+  font-size: 11px;
+  margin: 9px 0;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 82px;
+    left: 0;
+    right: 0;
+    background: #141414;
+    padding: 15px 5%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 13px;
+  }
+
+  .about-grid,
+  .contact-grid,
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  section {
+    padding: 65px 0;
+  }
+
+  .hero {
+    min-height: 650px;
+  }
+
+  .pricing-grid,
+  .gallery-grid,
+  .booking-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-field.full {
+    grid-column: auto;
+  }
+
+  .package,
+  .booking-form,
+  .booking-aside,
+  .contact-box {
+    padding: 24px;
+  }
+
+  .values-grid {
+    gap: 8px;
+  }
+
+  .value {
+    font-size: 10px;
+  }
+
+  .faith-panel {
+    padding: 38px 22px;
+  }
+
+  .gallery-item img {
+    height: 240px;
+  }
+
+  .header-logo {
+    width: 110px;
+  }
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <nav class="container">
-      <a href="#home" class="brand">M<span>2J</span> ✝</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-      <div class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#about">About</a>
-        <a href="#faith">Our Faith</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#booking">Book / Quote</a>
-        <a href="#contact" class="nav-cta">Contact Us</a>
-      </div>
-    </nav>
-  </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="container hero-inner">
-        <div class="eyebrow">Cincinnati, Ohio • Faith-Driven Detailing</div>
-        <h1>M<span class="red">2J</span><br>AUTO DETAILING</h1>
-        <h3>Driven by Faith. <span class="red">Defined by Quality.</span></h3>
-        <p class="hero-description">Quality automotive detailing built on faith, integrity, and attention to detail. We take pride in treating every vehicle with care and every customer with respect.</p>
-        <div class="hero-buttons">
-          <a href="#pricing" class="btn btn-red">VIEW PRICING</a>
-          <a href="#booking" class="btn">BOOK A DETAIL</a>
-        </div>
-        <div class="verse">
-          "And whatsoever ye do, do it heartily, as to the Lord, and not unto men."
-          <strong>COLOSSIANS 3:23 • KJV</strong>
-        </div>
-      </div>
-    </section>
+<!-- HEADER -->
+<header>
+  <nav class="nav container">
 
-    <div class="values">
-      <div class="container values-grid">
-        <div><span>✝</span> FAITH</div>
-        <div><span>✓</span> INTEGRITY</div>
-        <div><span>★</span> EXCELLENCE</div>
+    <a href="#home" aria-label="M2J Auto Detailing Home">
+      <img
+        src="m2j-logo.png"
+        alt="M2J Auto Detailing Logo"
+        class="header-logo">
+    </a>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Toggle navigation"
+      aria-controls="navLinks"
+      aria-expanded="false">
+      ☰
+    </button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#faith">Our Faith</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#booking">Book / Quote</a>
+      <a href="#contact" class="contact-nav">Contact Us</a>
+    </div>
+
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-content">
+
+    <div class="hero-label">
+      CINCINNATI, OHIO • FAITH-DRIVEN DETAILING
+    </div>
+
+    <img
+      src="m2j-logo.png"
+      alt="M2J Auto Detailing"
+      class="hero-logo">
+
+    <h1>
+      M<span class="red">2J</span>
+      AUTO DETAILING
+    </h1>
+
+    <h2>
+      Driven by Faith.
+      <span class="red">Defined by Quality.</span>
+    </h2>
+
+    <p>
+      Quality automotive detailing built on faith,
+      integrity, and attention to detail.
+      We take pride in treating every vehicle
+      with care and every customer with respect.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#pricing" class="btn btn-red">
+        VIEW PRICING
+      </a>
+
+      <a href="#booking" class="btn btn-outline">
+        BOOK A DETAIL
+      </a>
+    </div>
+
+    <div class="hero-verse">
+      "And whatsoever ye do, do it heartily,
+      as to the Lord, and not unto men."
+      <strong>COLOSSIANS 3:23 • KJV</strong>
+    </div>
+
+  </div>
+</section>
+
+<!-- VALUES -->
+<div class="values">
+  <div class="container values-grid">
+    <div class="value"><span>✝</span> Faith</div>
+    <div class="value"><span>✓</span> Integrity</div>
+    <div class="value"><span>★</span> Excellence</div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+
+    <div class="center">
+      <div class="section-label">Our Services</div>
+
+      <h2 class="section-title">
+        DETAILING <span class="red">PACKAGES</span>
+      </h2>
+
+      <p class="section-description">
+        Choose the detailing package that best fits
+        your vehicle. Every package is completed
+        with attention to detail and pride in our work.
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- BASIC EXTERIOR -->
+      <div class="package">
+        <div class="package-icon">🚘</div>
+
+        <h3>Basic Exterior Wash</h3>
+
+        <div class="price">
+          $45<sup>+*</sup>
+          <small>Starting Price</small>
+        </div>
+
+        <p class="package-description">
+          Perfect for maintaining your vehicle's
+          appearance. Our Basic Exterior Wash
+          removes everyday dirt, dust, and road
+          grime while leaving the exterior
+          looking clean and refreshed.
+        </p>
+
+        <ul>
+          <li>Thorough exterior hand wash</li>
+          <li>Exterior soap and rinse</li>
+          <li>Wheel and tire cleaning</li>
+          <li>Exterior window and mirror cleaning</li>
+          <li>Careful exterior drying</li>
+          <li>Tire dressing</li>
+          <li>Final exterior inspection</li>
+        </ul>
+
+        <a href="#booking" class="btn btn-outline">
+          REQUEST THIS PACKAGE
+        </a>
+      </div>
+
+      <!-- INTERIOR -->
+      <div class="package">
+        <div class="package-icon">✨</div>
+
+        <h3>Interior Detail</h3>
+
+        <div class="price">
+          $65<sup>+*</sup>
+          <small>Starting Price</small>
+        </div>
+
+        <p class="package-description">
+          Designed to refresh your vehicle's
+          interior and remove everyday dirt
+          and debris. This package focuses on
+          the main interior surfaces to provide
+          a cleaner and more comfortable
+          driving experience.
+        </p>
+
+        <ul>
+          <li>Thorough interior vacuuming</li>
+          <li>Seats and carpet vacuumed</li>
+          <li>Dashboard cleaning</li>
+          <li>Center console cleaning</li>
+          <li>Door panel wipe-down</li>
+          <li>Cupholder cleaning</li>
+          <li>Interior window cleaning</li>
+          <li>Basic floor mat cleaning</li>
+          <li>Final interior inspection</li>
+        </ul>
+
+        <a href="#booking" class="btn btn-outline">
+          REQUEST THIS PACKAGE
+        </a>
+      </div>
+
+      <!-- PREMIUM INTERIOR -->
+      <div class="package">
+        <div class="package-icon">💎</div>
+
+        <h3>Premium Interior Detail</h3>
+
+        <div class="price">
+          $120<sup>+*</sup>
+          <small>Starting Price</small>
+        </div>
+
+        <p class="package-description">
+          A deeper and more thorough cleaning
+          for vehicles that need extra attention.
+          This package goes beyond our standard
+          interior service by focusing on
+          hard-to-reach areas, built-up dirt,
+          and surfaces requiring more care.
+        </p>
+
+        <ul>
+          <li>Everything in Interior Detail</li>
+          <li>Detailed interior crevice cleaning</li>
+          <li>Cleaning around seat tracks</li>
+          <li>Detailed dashboard and console cleaning</li>
+          <li>Deeper floor mat cleaning</li>
+          <li>Additional carpet attention</li>
+          <li>Appropriate upholstery spot cleaning</li>
+          <li>Detailed door panel cleaning</li>
+          <li>Vent and tight-space cleaning</li>
+          <li>Interior finishing touches</li>
+          <li>Final quality inspection</li>
+        </ul>
+
+        <a href="#booking" class="btn btn-outline">
+          REQUEST THIS PACKAGE
+        </a>
+      </div>
+
+      <!-- FULL DETAIL -->
+      <div class="package featured">
+        <div class="package-badge">
+          BEST VALUE
+        </div>
+
+        <div class="package-icon">🏁</div>
+
+        <h3>Full Detail</h3>
+
+        <div class="price">
+          $150<sup>+*</sup>
+          <small>Starting Price</small>
+        </div>
+
+        <p class="package-description">
+          Our most complete detailing package.
+          The Full Detail combines our Premium
+          Interior Detail with our Basic Exterior
+          Wash, giving your vehicle a thorough
+          cleaning both inside and out.
+        </p>
+
+        <ul>
+          <li>Everything in Premium Interior Detail</li>
+          <li>Complete interior vacuuming</li>
+          <li>Detailed interior surface cleaning</li>
+          <li>Crevice and tight-space cleaning</li>
+          <li>Floor mat and carpet attention</li>
+          <li>Appropriate upholstery spot cleaning</li>
+          <li>Complete exterior hand wash</li>
+          <li>Wheel and tire cleaning</li>
+          <li>Interior and exterior windows</li>
+          <li>Careful exterior drying</li>
+          <li>Tire dressing</li>
+          <li>Interior and exterior finishing touches</li>
+          <li>Final vehicle inspection</li>
+        </ul>
+
+        <p class="package-saving">
+          SAVE $15 COMPARED TO BOOKING SEPARATELY
+        </p>
+
+        <a href="#booking" class="btn btn-red">
+          REQUEST THIS PACKAGE
+        </a>
+      </div>
+
+    </div>
+
+    <div class="disclaimer">
+      <p>
+        <strong>* IMPORTANT PRICING INFORMATION:</strong>
+        All prices listed are starting prices.
+        The vehicle's size, cleanliness, and overall
+        condition will be evaluated on the scheduled
+        date of the detail before any work begins.
+        Additional charges may apply for excessively
+        dirty interiors, heavy stains, excessive
+        pet hair, significant debris, or areas
+        requiring extra time and cleaning.
+        Any additional charges will be explained
+        and discussed with the customer for approval
+        before the detailing service begins.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container about-grid">
+
+    <div class="about-image">
+      <img
+        src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85"
+        alt="Sports car"
+        loading="lazy">
+    </div>
+
+    <div class="about-text">
+      <div class="section-label">Who We Are</div>
+
+      <h2 class="section-title">
+        ABOUT <span class="red">M2J</span>
+      </h2>
+
+      <p>
+        M2J Auto Detailing is a Cincinnati-based
+        business founded by three people who share
+        a passion for cars, hard work, and
+        providing quality service.
+      </p>
+
+      <p>
+        We believe detailing is about more than
+        making a car look clean. It's about taking
+        pride in our work, being dependable,
+        and building trust with our customers.
+      </p>
+
+      <p>
+        As a faith-driven business, we strive to
+        apply Christian values to the way we
+        operate, from the effort we put into
+        each vehicle to the respect we show
+        everyone we serve.
+      </p>
+
+      <div class="about-highlight">
+        Built on Faith. Driven by Excellence.
       </div>
     </div>
 
-    <!-- PRICING -->
-    <section class="section" id="pricing">
-      <div class="container">
-        <div class="center">
-          <div class="eyebrow">Our Services</div>
-          <h2>DETAILING <span>PACKAGES</span></h2>
-          <p class="section-intro">Choose the detailing package that best fits your vehicle. Every package is completed with attention to detail and pride in our work.</p>
-        </div>
+  </div>
+</section>
 
-        <div class="pricing-grid">
-          <article class="package">
-            <div class="package-icon">🚘</div>
-            <h3>Basic Exterior Wash</h3>
-            <div class="price">$45<sup>+*</sup><small>Starting Price</small></div>
-            <p class="package-description">Perfect for maintaining your vehicle's appearance. Our Basic Exterior Wash removes everyday dirt, dust, and road grime while leaving the exterior looking clean and refreshed.</p>
-            <ul>
-              <li>Thorough exterior hand wash</li>
-              <li>Exterior soap and rinse</li>
-              <li>Wheel and tire cleaning</li>
-              <li>Exterior window and mirror cleaning</li>
-              <li>Careful exterior drying</li>
-              <li>Tire dressing</li>
-              <li>Final exterior inspection</li>
-            </ul>
-            <a href="#booking" class="btn">REQUEST THIS PACKAGE</a>
-          </article>
+<!-- OUR FAITH -->
+<section id="faith">
+  <div class="container">
 
-          <article class="package">
-            <div class="package-icon">✨</div>
-            <h3>Interior Detail</h3>
-            <div class="price">$65<sup>+*</sup><small>Starting Price</small></div>
-            <p class="package-description">Designed to refresh your vehicle's interior and remove everyday dirt and debris. This package focuses on the main interior surfaces to provide a cleaner and more comfortable driving experience.</p>
-            <ul>
-              <li>Thorough interior vacuuming</li>
-              <li>Seats and carpet vacuumed</li>
-              <li>Dashboard cleaning</li>
-              <li>Center console cleaning</li>
-              <li>Door panel wipe-down</li>
-              <li>Cupholder cleaning</li>
-              <li>Interior window cleaning</li>
-              <li>Basic floor mat cleaning</li>
-              <li>Final interior inspection</li>
-            </ul>
-            <a href="#booking" class="btn">REQUEST THIS PACKAGE</a>
-          </article>
+    <div class="faith-panel">
+      <div class="faith-cross">✝</div>
 
-          <article class="package">
-            <div class="package-icon">💎</div>
-            <h3>Premium Interior Detail</h3>
-            <div class="price">$120<sup>+*</sup><small>Starting Price</small></div>
-            <p class="package-description">A deeper and more thorough cleaning for vehicles that need extra attention. This package goes beyond our standard interior service by focusing on hard-to-reach areas, built-up dirt, and surfaces requiring more care.</p>
-            <ul>
-              <li>Everything in Interior Detail</li>
-              <li>Detailed interior crevice cleaning</li>
-              <li>Cleaning around seat tracks</li>
-              <li>Detailed dashboard and console cleaning</li>
-              <li>Deeper floor mat cleaning</li>
-              <li>Additional carpet attention</li>
-              <li>Appropriate upholstery spot cleaning</li>
-              <li>Detailed door panel cleaning</li>
-              <li>Vent and tight-space cleaning</li>
-              <li>Interior finishing touches</li>
-              <li>Final quality inspection</li>
-            </ul>
-            <a href="#booking" class="btn">REQUEST THIS PACKAGE</a>
-          </article>
-
-          <article class="package featured">
-            <div class="package-badge">BEST VALUE</div>
-            <div class="package-icon">🏁</div>
-            <h3>Full Detail</h3>
-            <div class="price">$150<sup>+*</sup><small>Starting Price</small></div>
-            <p class="package-description">Our most complete detailing package. The Full Detail combines our Premium Interior Detail with our Basic Exterior Wash, giving your vehicle a thorough cleaning both inside and out.</p>
-            <ul>
-              <li>Everything in Premium Interior Detail</li>
-              <li>Complete interior vacuuming</li>
-              <li>Detailed interior surface cleaning</li>
-              <li>Crevice and tight-space cleaning</li>
-              <li>Floor mat and carpet attention</li>
-              <li>Appropriate upholstery spot cleaning</li>
-              <li>Complete exterior hand wash</li>
-              <li>Wheel and tire cleaning</li>
-              <li>Interior and exterior windows</li>
-              <li>Careful exterior drying</li>
-              <li>Tire dressing</li>
-              <li>Interior and exterior finishing touches</li>
-              <li>Final vehicle inspection</li>
-            </ul>
-            <p class="saving">SAVE $15 COMPARED TO BOOKING SEPARATELY</p>
-            <a href="#booking" class="btn btn-red">REQUEST THIS PACKAGE</a>
-          </article>
-        </div>
-
-        <div class="disclaimer">
-          <strong>* IMPORTANT PRICING INFORMATION:</strong>
-          All prices listed are starting prices. The vehicle's size, cleanliness, and overall condition will be evaluated on the scheduled date of the detail before any work begins. Additional charges may apply for excessively dirty interiors, heavy stains, excessive pet hair, significant debris, or areas requiring extra time and cleaning. Any additional charges will be explained and discussed with the customer for approval before the detailing service begins.
-        </div>
+      <div class="section-label">
+        The Foundation of M2J
       </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section class="section alt-section" id="about">
-      <div class="container two-col">
-        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85" alt="Sports car" loading="lazy">
-        <div>
-          <div class="eyebrow">Who We Are</div>
-          <h2>ABOUT <span>M2J</span></h2>
-          <p>M2J Auto Detailing is a Cincinnati-based business founded by three people who share a passion for cars, hard work, and providing quality service.</p>
-          <p>We believe detailing is about more than making a car look clean. It's about taking pride in our work, being dependable, and building trust with our customers.</p>
-          <p>As a faith-driven business, we strive to apply Christian values to the way we operate, from the effort we put into each vehicle to the respect we show everyone we serve.</p>
-          <div class="highlight">Built on Faith. Driven by Excellence.</div>
-        </div>
+      <h2 class="section-title">
+        OUR <span class="red">FAITH</span>
+      </h2>
+
+      <p>
+        At M2J Auto Detailing, our Christian
+        faith is an important part of who
+        we are and how we approach our business.
+      </p>
+
+      <p>
+        We believe in honoring God through
+        hard work, honesty, integrity,
+        and serving others.
+        Our goal isn't just to deliver
+        a clean car. It's to make sure every
+        customer feels valued, respected,
+        and confident in the service
+        they receive.
+      </p>
+
+      <p>
+        We strive to reflect our values
+        through our actions, treating people
+        fairly and giving our best effort
+        in everything we do.
+        Everyone is welcome at M2J.
+      </p>
+
+      <div class="faith-quote">
+        "Let all your things be done with charity."
       </div>
-    </section>
 
-    <!-- FAITH -->
-    <section class="section" id="faith">
-      <div class="container">
-        <div class="faith-panel">
-          <div class="faith-cross">✝</div>
-          <div class="eyebrow">The Foundation of M2J</div>
-          <h2>OUR <span>FAITH</span></h2>
-          <p>At M2J Auto Detailing, our Christian faith is an important part of who we are and how we approach our business.</p>
-          <p>We believe in honoring God through hard work, honesty, integrity, and serving others. Our goal isn't just to deliver a clean car. It's to make sure every customer feels valued, respected, and confident in the service they receive.</p>
-          <p>We strive to reflect our values through our actions, treating people fairly and giving our best effort in everything we do. Everyone is welcome at M2J.</p>
-          <div class="faith-quote">"Let all your things be done with charity."</div>
-          <div class="faith-reference">1 CORINTHIANS 16:14 • KJV</div>
-        </div>
+      <div class="faith-reference">
+        1 CORINTHIANS 16:14 • KJV
       </div>
-    </section>
 
-    <!-- GALLERY -->
-    <section class="section alt-section" id="gallery">
-      <div class="container">
-        <div class="center">
-          <div class="eyebrow">Attention to Detail</div>
-          <h2>OUR <span>GALLERY</span></h2>
-          <p class="section-intro">A look at the automotive style and quality that inspire our work.</p>
-        </div>
-        <div class="gallery-grid">
-          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=85" alt="Black sports car" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85" alt="Silver sports car" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=85" alt="Modern car exterior" loading="lazy">
-        </div>
-      </div>
-    </section>
-
-    <!-- BOOKING AND QUOTE REQUEST -->
-    <section class="section" id="booking">
-      <div class="container">
-        <div class="center">
-          <div class="eyebrow">Appointments & Estimates</div>
-          <h2>BOOK A DETAIL OR <span>REQUEST A QUOTE</span></h2>
-          <p class="section-intro">Tell us about your vehicle and what you need. We'll review your request and get back to you to discuss availability and pricing. Submitting a request does not confirm an appointment.</p>
-        </div>
-
-        <div class="booking-layout">
-          <form class="booking-card" id="bookingForm">
-            <h3>YOUR DETAILING REQUEST</h3>
-            <p>Complete the information below to prepare an email request to our team. Fields marked * are required.</p>
-
-            <div class="booking-fields">
-              <div class="booking-field">
-                <label for="customerName">Full name *</label>
-                <input id="customerName" name="name" autocomplete="name" required maxlength="100" placeholder="Your name">
-              </div>
-              <div class="booking-field">
-                <label for="customerEmail">Email *</label>
-                <input id="customerEmail" name="email" type="email" autocomplete="email" required maxlength="150" placeholder="you@example.com">
-              </div>
-              <div class="booking-field">
-                <label for="customerPhone">Phone (optional)</label>
-                <input id="customerPhone" name="phone" type="tel" autocomplete="tel" maxlength="40">
-              </div>
-              <div class="booking-field">
-                <label for="requestType">What do you need? *</label>
-                <select id="requestType" required>
-                  <option value="Booking request">Request an appointment</option>
-                  <option value="Quote request">Request a quote</option>
-                </select>
-              </div>
-              <div class="booking-field">
-                <label for="vehicleYear">Vehicle year *</label>
-                <input id="vehicleYear" name="year" type="number" min="1950" max="2030" placeholder="2020" required>
-              </div>
-              <div class="booking-field">
-                <label for="vehicleMakeModel">Vehicle make & model *</label>
-                <input id="vehicleMakeModel" name="vehicle" placeholder="Honda Civic" required maxlength="100">
-              </div>
-              <div class="booking-field">
-                <label for="vehicleType">Vehicle size *</label>
-                <select id="vehicleType" required>
-                  <option value="Sedan / Coupe">Sedan / Coupe</option>
-                  <option value="SUV / Truck">SUV / Truck</option>
-                  <option value="Large SUV / Van">Large SUV / Van</option>
-                </select>
-              </div>
-              <div class="booking-field">
-                <label for="servicePackage">Detailing package *</label>
-                <select id="servicePackage" required>
-                  <option value="Basic Exterior Wash" data-price="45">Basic Exterior Wash — $45+*</option>
-                  <option value="Interior Detail" data-price="65">Interior Detail — $65+*</option>
-                  <option value="Premium Interior Detail" data-price="120">Premium Interior Detail — $120+*</option>
-                  <option value="Full Detail" data-price="150">Full Detail — $150+*</option>
-                </select>
-              </div>
-              <div class="booking-field">
-                <label for="preferredDate">Preferred date *</label>
-                <input id="preferredDate" type="date" required>
-              </div>
-              <div class="booking-field">
-                <label for="preferredTime">Preferred time</label>
-                <select id="preferredTime">
-                  <option value="Flexible">Flexible</option>
-                  <option value="Morning">Morning</option>
-                  <option value="Afternoon">Afternoon</option>
-                </select>
-              </div>
-              <div class="booking-field full">
-                <label for="vehicleCondition">Vehicle condition *</label>
-                <select id="vehicleCondition" required>
-                  <option value="Lightly dirty">Lightly dirty</option>
-                  <option value="Moderately dirty">Moderately dirty</option>
-                  <option value="Heavily dirty">Heavily dirty</option>
-                  <option value="Pet hair / stains">Pet hair / stains</option>
-                </select>
-              </div>
-              <div class="booking-field full">
-                <label for="bookingNotes">Additional details (optional)</label>
-                <textarea id="bookingNotes" maxlength="1500" placeholder="Anything we should know about the vehicle or cleaning needs?"></textarea>
-              </div>
-            </div>
-
-            <p class="booking-note">* The vehicle will be evaluated on the scheduled date of the detail. Additional charges may apply for excessive dirt, stains, pet hair, vehicle size, or extra cleaning time. We will explain any extra charges and request your approval before work begins.</p>
-
-            <button class="btn btn-red booking-submit" type="submit">PREPARE MY REQUEST EMAIL</button>
-            <p class="booking-privacy">This button opens your email app with the request filled in. You must press Send in your email app. This website does not store your information or send it automatically.</p>
-          </form>
-
-          <aside class="booking-aside">
-            <div class="eyebrow">Your Selected Package</div>
-            <h3>ESTIMATED STARTING PRICE</h3>
-            <div class="estimate" id="bookingEstimate" aria-live="polite">$45+*</div>
-            <p>Prices are starting estimates, not guaranteed final quotes.</p>
-            <h3>HOW IT WORKS</h3>
-            <ol class="booking-steps">
-              <li>Complete the request form.</li>
-              <li>Open and send the prepared email.</li>
-              <li>Our team reviews your vehicle and requested service.</li>
-              <li>We contact you to discuss the appointment.</li>
-              <li>On the scheduled date, we evaluate your vehicle and confirm any extra charges before starting.</li>
-            </ol>
-            <p class="small-print">Your preferred date and time are requests only. Availability must be confirmed by M2J Auto Detailing.</p>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section alt-section" id="contact">
-      <div class="container two-col">
-        <div>
-          <div class="eyebrow">Get In Touch</div>
-          <h2>READY FOR A <span>CLEAN CAR?</span></h2>
-          <p>Interested in getting your vehicle detailed? Reach out to M2J Auto Detailing to ask about pricing, services, and scheduling.</p>
-          <div class="contact-info"><strong>SERVICE AREA</strong>Cincinnati, Ohio</div>
-          <div class="contact-info"><strong>EMAIL</strong><a href="mailto:m2jautodeatiling@gmail.com">m2jautodeatiling@gmail.com</a></div>
-          <div class="contact-info"><strong>INSTAGRAM</strong><a href="https://www.instagram.com/m2jautodetailing/" target="_blank" rel="noopener noreferrer">@m2jautodetailing</a></div>
-        </div>
-        <div class="contact-box">
-          <h3>LET'S GET STARTED</h3>
-          <p>Send us a message with your vehicle, the detailing package you're interested in, and any questions you have.</p>
-          <a class="btn btn-red" href="#booking">BOOK / REQUEST A QUOTE</a>
-          <a class="btn" href="mailto:m2jautodeatiling@gmail.com?subject=M2J%20Detailing%20Request">EMAIL US</a>
-          <a class="btn" href="https://www.instagram.com/m2jautodetailing/" target="_blank" rel="noopener noreferrer">MESSAGE ON INSTAGRAM</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-brand">M<span class="red">2J</span> ✝</div>
-      <p>Driven by Faith. Defined by Quality.</p>
-      <p>Colossians 3:23 • Cincinnati, Ohio</p>
-      <p>&copy; <span id="year"></span> M2J Auto Detailing. All rights reserved.</p>
     </div>
-  </footer>
 
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
+  </div>
+</section>
 
-    menuToggle.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuToggle.textContent = isOpen ? '✕' : '☰';
-    });
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
 
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.textContent = '☰';
-      });
-    });
+    <div class="center">
+      <div class="section-label">
+        Attention to Detail
+      </div>
 
-    document.getElementById('year').textContent = new Date().getFullYear();
+      <h2 class="section-title">
+        OUR <span class="red">GALLERY</span>
+      </h2>
 
-    const bookingForm = document.getElementById('bookingForm');
-    const packageSelect = document.getElementById('servicePackage');
-    const estimate = document.getElementById('bookingEstimate');
-    const preferredDate = document.getElementById('preferredDate');
+      <p class="section-description">
+        A look at the automotive style and
+        quality that inspire our work.
+      </p>
+    </div>
 
-    function updateEstimate() {
-      const selected = packageSelect.options[packageSelect.selectedIndex];
-      estimate.textContent = '$' + selected.dataset.price + '+*';
-    }
+    <div class="gallery-grid">
 
-    packageSelect.addEventListener('change', updateEstimate);
-    updateEstimate();
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=85"
+          alt="Black sports car"
+          loading="lazy">
+      </div>
 
-    function localDateString(date) {
-      const year = date.getFullYear();
-      const month = String(date.getMonth() + 1).padStart(2, '0');
-      const day = String(date.getDate()).padStart(2, '0');
-      return year + '-' + month + '-' + day;
-    }
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85"
+          alt="Silver sports car"
+          loading="lazy">
+      </div>
 
-    preferredDate.min = localDateString(new Date());
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=85"
+          alt="Modern car exterior"
+          loading="lazy">
+      </div>
 
-    bookingForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      if (!bookingForm.reportValidity()) return;
+    </div>
 
-      const get = (id) => document.getElementById(id).value.trim();
-      const selected = packageSelect.options[packageSelect.selectedIndex];
-      const price = selected.dataset.price;
-      const subject = 'M2J ' + get('requestType') + ' - ' + get('customerName');
+  </div>
+</section>
 
-      const lines = [
-        'M2J AUTO DETAILING - CUSTOMER REQUEST',
-        '',
-        'Request type: ' + get('requestType'),
-        'Customer name: ' + get('customerName'),
-        'Email: ' + get('customerEmail'),
-        'Phone: ' + (get('customerPhone') || 'Not provided'),
-        '',
-        'Vehicle year: ' + get('vehicleYear'),
-        'Vehicle make/model: ' + get('vehicleMakeModel'),
-        'Vehicle size: ' + get('vehicleType'),
-        'Vehicle condition: ' + get('vehicleCondition'),
-        '',
-        'Package: ' + get('servicePackage'),
-        'Advertised starting price: $' + price + '+',
-        'Preferred date: ' + get('preferredDate'),
-        'Preferred time: ' + get('preferredTime'),
-        '',
-        'Notes: ' + (get('bookingNotes') || 'None'),
-        '',
-        'I understand that my request does not confirm an appointment.',
-        'I understand that final pricing is determined after vehicle evaluation and that any additional charges will be discussed for approval before work begins.'
-      ];
+<!-- BOOKING AND QUOTE REQUEST -->
+<section class="booking" id="booking">
+  <div class="container">
 
-      window.location.href =
-        'mailto:m2jautodeatiling@gmail.com?subject=' +
-        encodeURIComponent(subject) +
-        '&body=' +
-        encodeURIComponent(lines.join('\n'));
-    });
-  </script>
+    <div class="center">
+      <div class="section-label">
+        Appointments & Estimates
+      </div>
+
+      <h2 class="section-title">
+        BOOK A DETAIL OR
+        <span class="red">REQUEST A QUOTE</span>
+      </h2>
+
+      <p class="section-description">
+        Tell us about your vehicle and what you need.
+        We'll review your request and get back to you
+        to discuss availability and pricing.
+        Submitting a request does not confirm an appointment.
+      </p>
+    </div>
+
+    <div class="booking-layout">
+
+      <form class="booking-form" id="bookingForm">
+
+        <h3>YOUR DETAILING REQUEST</h3>
+
+        <p class="booking-note">
+          Fill out the information below to prepare
+          an email request to M2J Auto Detailing.
+          Fields marked * are required.
+        </p>
+
+        <div class="booking-fields">
+
+          <div class="booking-field">
+            <label for="customerName">Full Name *</label>
+            <input
+              id="customerName"
+              type="text"
+              autocomplete="name"
+              maxlength="100"
+              placeholder="Your name"
+              required>
+          </div>
+
+          <div class="booking-field">
+            <label for="customerEmail">Email *</label>
+            <input
+              id="customerEmail"
+              type="email"
+              autocomplete="email"
+              maxlength="150"
+              placeholder="you@example.com"
+              required>
+          </div>
+
+          <div class="booking-field">
+            <label for="customerPhone">Phone (Optional)</label>
+            <input
+              id="customerPhone"
+              type="tel"
+              autocomplete="tel"
+              maxlength="40"
+              placeholder="Phone number">
+          </div>
+
+          <div class="booking-field">
+            <label for="requestType">Request Type *</label>
+            <select id="requestType" required>
+              <option value="Booking request">
+                Request an Appointment
+              </option>
+              <option value="Quote request">
+                Request a Quote
+              </option>
+            </select>
+          </div>
+
+          <div class="booking-field">
+            <label for="vehicleYear">Vehicle Year *</label>
+            <input
+              id="vehicleYear"
+              type="number"
+              min="1950"
+              max="2030"
+              placeholder="2020"
+              required>
+          </div>
+
+          <div class="booking-field">
+            <label for="vehicleMakeModel">Make & Model *</label>
+            <input
+              id="vehicleMakeModel"
+              type="text"
+              maxlength="100"
+              placeholder="Honda Civic"
+              required>
+          </div>
+
+          <div class="booking-field">
+            <label for="vehicleType">Vehicle Size *</label>
+            <select id="vehicleType" required>
+              <option value="Sedan / Coupe">
+                Sedan / Coupe
+              </option>
+              <option value="SUV / Truck">
+                SUV / Truck
+              </option>
+              <option value="Large SUV / Van">
+                Large SUV / Van
+              </option>
+            </select>
+          </div>
+
+          <div class="booking-field">
+            <label for="servicePackage">Detailing Package *</label>
+            <select id="servicePackage" required>
+              <option value="Basic Exterior Wash" data-price="45">
+                Basic Exterior Wash — $45+
+              </option>
+              <option value="Interior Detail" data-price="65">
+                Interior Detail — $65+
+              </option>
+              <option value="Premium Interior Detail" data-price="120">
+                Premium Interior Detail — $120+
+              </option>
+              <option value="Full Detail" data-price="150">
+                Full Detail — $150+
+              </option>
+            </select>
+          </div>
+
+          <div class="booking-field">
+            <label for="preferredDate">Preferred Date *</label>
+            <input
+              id="preferredDate"
+              type="date"
+              required>
+          </div>
+
+          <div class="booking-field">
+            <label for="preferredTime">Preferred Time</label>
+            <select id="preferredTime">
+              <option value="Flexible">Flexible</option>
+              <option value="Morning">Morning</option>
+              <option value="Afternoon">Afternoon</option>
+            </select>
+          </div>
+
+          <div class="booking-field full">
+            <label for="vehicleCondition">Vehicle Condition *</label>
+            <select id="vehicleCondition" required>
+              <option value="Lightly dirty">
+                Lightly Dirty
+              </option>
+              <option value="Moderately dirty">
+                Moderately Dirty
+              </option>
+              <option value="Heavily dirty">
+                Heavily Dirty
+              </option>
+              <option value="Pet hair / stains">
+                Pet Hair / Stains
+              </option>
+            </select>
+          </div>
+
+          <div class="booking-field full">
+            <label for="bookingNotes">
+              Additional Details (Optional)
+            </label>
+            <textarea
+              id="bookingNotes"
+              maxlength="1500"
+              placeholder="Anything we should know about your vehicle?"></textarea>
+          </div>
+
+        </div>
+
+        <p class="booking-note">
+          * Prices are starting estimates.
+          Vehicle size and condition will be evaluated
+          on the scheduled detailing date.
+          Any additional charges will be explained
+          and approved before work begins.
+        </p>
+
+        <button
+          type="submit"
+          class="btn btn-red booking-submit">
+          PREPARE MY REQUEST EMAIL
+        </button>
+
+        <p class="booking-privacy">
+          This form opens your email app with your
+          request filled in. You must press Send
+          in your email app. The website does not
+          automatically send or store requests.
+        </p>
+
+      </form>
+
+      <!-- BOOKING SUMMARY -->
+      <aside class="booking-aside">
+
+        <div class="section-label">
+          Your Selected Package
+        </div>
+
+        <h3>ESTIMATED STARTING PRICE</h3>
+
+        <div class="estimate" id="bookingEstimate">
+          $45+*
+        </div>
+
+        <p>
+          This is a starting estimate,
+          not a guaranteed final quote.
+        </p>
+
+        <h3>HOW IT WORKS</h3>
+
+        <ol>
+          <li>Complete the request form.</li>
+          <li>Open and send the prepared email.</li>
+          <li>Our team reviews your request.</li>
+          <li>We contact you to discuss availability.</li>
+          <li>We evaluate your vehicle on the scheduled date before work begins.</li>
+        </ol>
+
+        <p>
+          Your preferred date and time are requests only.
+          Appointments must be confirmed by M2J.
+        </p>
+
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container contact-grid">
+
+    <div>
+      <div class="section-label">
+        Get In Touch
+      </div>
+
+      <h2 class="section-title">
+        READY FOR A
+        <span class="red">CLEAN CAR?</span>
+      </h2>
+
+      <p class="contact-text">
+        Interested in getting your vehicle detailed?
+        Reach out to M2J Auto Detailing to ask
+        about pricing, services, and scheduling.
+      </p>
+
+      <div class="contact-detail">
+        <strong>Service Area</strong>
+        Cincinnati, Ohio
+      </div>
+
+      <div class="contact-detail">
+        <strong>Email</strong>
+        <a href="mailto:m2jautodeatiling@gmail.com">
+          m2jautodeatiling@gmail.com
+        </a>
+      </div>
+
+      <div class="contact-detail">
+        <strong>Instagram</strong>
+        <a
+          href="https://www.instagram.com/m2jautodetailing/"
+          target="_blank"
+          rel="noopener noreferrer">
+          @m2jautodetailing
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-box">
+      <h3>LET'S GET STARTED</h3>
+
+      <p>
+        Send us a message with your vehicle,
+        the detailing package you're interested in,
+        and any questions you have.
+      </p>
+
+      <a href="#booking" class="btn btn-red">
+        BOOK / REQUEST A QUOTE
+      </a>
+
+      <a
+        href="mailto:m2jautodeatiling@gmail.com?subject=M2J%20Detailing%20Inquiry"
+        class="btn btn-outline">
+        EMAIL US
+      </a>
+
+      <a
+        href="https://www.instagram.com/m2jautodetailing/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-outline">
+        MESSAGE ON INSTAGRAM
+      </a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+
+    <img
+      src="m2j-logo.png"
+      alt="M2J Auto Detailing Logo"
+      class="footer-logo">
+
+    <p>Driven by Faith. Defined by Quality.</p>
+    <p>Colossians 3:23 • Cincinnati, Ohio</p>
+
+    <p>
+      &copy; <span id="year"></span>
+      M2J Auto Detailing. All rights reserved.
+    </p>
+
+  </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+
+// MOBILE NAVIGATION
+
+const menuToggle =
+  document.getElementById("menuToggle");
+
+const navLinks =
+  document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+
+  menuToggle.setAttribute(
+    "aria-expanded",
+    String(isOpen)
+  );
+
+  menuToggle.textContent = isOpen ? "✕" : "☰";
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰";
+  });
+});
+
+// BOOKING ESTIMATE
+
+const bookingForm =
+  document.getElementById("bookingForm");
+
+const packageSelect =
+  document.getElementById("servicePackage");
+
+const estimate =
+  document.getElementById("bookingEstimate");
+
+function updateEstimate() {
+  const selected =
+    packageSelect.options[packageSelect.selectedIndex];
+
+  estimate.textContent =
+    "$" + selected.dataset.price + "+*";
+}
+
+packageSelect.addEventListener(
+  "change",
+  updateEstimate
+);
+
+updateEstimate();
+
+// SET MINIMUM DATE TO TODAY
+
+function localDateString(date) {
+  const year = date.getFullYear();
+  const month =
+    String(date.getMonth() + 1).padStart(2, "0");
+  const day =
+    String(date.getDate()).padStart(2, "0");
+
+  return year + "-" + month + "-" + day;
+}
+
+document.getElementById("preferredDate").min =
+  localDateString(new Date());
+
+// BOOKING EMAIL REQUEST
+
+bookingForm.addEventListener("submit", event => {
+  event.preventDefault();
+
+  if (!bookingForm.reportValidity()) {
+    return;
+  }
+
+  const get = id =>
+    document.getElementById(id).value.trim();
+
+  const selected =
+    packageSelect.options[packageSelect.selectedIndex];
+
+  const price = selected.dataset.price;
+
+  const subject =
+    "M2J " + get("requestType") +
+    " - " + get("customerName");
+
+  const lines = [
+    "M2J AUTO DETAILING - CUSTOMER REQUEST",
+    "",
+    "Request type: " + get("requestType"),
+    "Customer name: " + get("customerName"),
+    "Email: " + get("customerEmail"),
+    "Phone: " + (get("customerPhone") || "Not provided"),
+    "",
+    "Vehicle year: " + get("vehicleYear"),
+    "Vehicle make/model: " + get("vehicleMakeModel"),
+    "Vehicle size: " + get("vehicleType"),
+    "Vehicle condition: " + get("vehicleCondition"),
+    "",
+    "Package: " + get("servicePackage"),
+    "Advertised starting price: $" + price + "+",
+    "Preferred date: " + get("preferredDate"),
+    "Preferred time: " + get("preferredTime"),
+    "",
+    "Notes: " + (get("bookingNotes") || "None"),
+    "",
+    "I understand that this request does not confirm an appointment.",
+    "I understand that final pricing is determined after vehicle evaluation.",
+    "Additional charges must be discussed and approved before work begins."
+  ];
+
+  window.location.href =
+    "mailto:m2jautodeatiling@gmail.com?subject=" +
+    encodeURIComponent(subject) +
+    "&body=" +
+    encodeURIComponent(lines.join("\n"));
+});
+
+// COPYRIGHT YEAR
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
 </body>
 </html>
