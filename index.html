@@ -21,373 +21,804 @@
   --card:#222;
   --muted:#bbb;
 }
+
 * {box-sizing:border-box}
-html {scroll-behavior:smooth;scroll-padding-top:95px}
-body {
-  margin:0;background:var(--black);color:#fff;
-  font-family:Montserrat,Arial,sans-serif;line-height:1.7;
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:95px;
 }
+
+body {
+  margin:0;
+  background:var(--black);
+  color:#fff;
+  font-family:Montserrat,Arial,sans-serif;
+  line-height:1.7;
+}
+
 a {color:inherit;text-decoration:none}
 button,input,select,textarea {font:inherit}
 button {cursor:pointer}
 img {max-width:100%;display:block}
-.container {width:min(1150px,90%);margin:auto}
+
+.container {
+  width:min(1150px,90%);
+  margin:auto;
+}
+
 section {padding:85px 0}
 .center {text-align:center}
 .red {color:var(--red)}
+
 .eyebrow {
-  color:var(--red);font-size:12px;font-weight:800;
-  letter-spacing:3px;text-transform:uppercase;
+  color:var(--red);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:3px;
+  text-transform:uppercase;
 }
+
 .section-title {
   font-size:clamp(28px,4vw,43px);
-  line-height:1.2;font-weight:900;margin:12px 0 20px;
+  line-height:1.2;
+  font-weight:900;
+  margin:12px 0 20px;
 }
+
 .section-intro {
-  color:var(--muted);font-size:14px;
-  max-width:690px;margin:0 auto 42px;
+  color:var(--muted);
+  font-size:14px;
+  max-width:690px;
+  margin:0 auto 42px;
 }
+
 .btn {
-  display:inline-flex;justify-content:center;align-items:center;
-  padding:14px 22px;border:1px solid #777;border-radius:5px;
-  background:transparent;color:white;font-size:12px;
-  font-weight:800;text-align:center;transition:.2s;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  padding:14px 22px;
+  border:1px solid #777;
+  border-radius:5px;
+  background:transparent;
+  color:white;
+  font-size:12px;
+  font-weight:800;
+  text-align:center;
+  transition:.2s;
 }
-.btn:hover {border-color:var(--red);transform:translateY(-2px)}
-.btn-red {background:var(--red);border-color:var(--red)}
-.btn-red:hover {background:var(--red-dark)}
-:focus-visible {outline:2px solid #ff7774;outline-offset:3px}
+
+.btn:hover {
+  border-color:var(--red);
+  transform:translateY(-2px);
+}
+
+.btn-red {
+  background:var(--red);
+  border-color:var(--red);
+}
+
+.btn-red:hover {
+  background:var(--red-dark);
+}
+
+:focus-visible {
+  outline:2px solid #ff7774;
+  outline-offset:3px;
+}
 
 /* NAVIGATION */
+
 header {
-  position:sticky;top:0;z-index:1000;
+  position:sticky;
+  top:0;
+  z-index:1000;
   background:rgba(13,13,13,.97);
   border-bottom:1px solid #303030;
 }
+
 .nav {
-  min-height:95px;display:flex;align-items:center;
-  justify-content:space-between;gap:18px;
+  min-height:95px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
 }
-.header-logo {width:135px;height:85px;object-fit:contain}
-.nav-links {display:flex;align-items:center;gap:15px}
-.nav-links a {font-size:10px;font-weight:800}
+
+.header-logo {
+  width:135px;
+  height:85px;
+  object-fit:contain;
+}
+
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.nav-links a {
+  font-size:10px;
+  font-weight:800;
+}
+
 .nav-links a:hover {color:var(--red)}
+
 .nav-links .contact-nav {
-  background:var(--red);color:white;
-  padding:11px 14px;border-radius:4px;
+  background:var(--red);
+  color:white;
+  padding:11px 14px;
+  border-radius:4px;
 }
+
 .menu-toggle {
-  display:none;background:transparent;color:white;
-  border:1px solid #555;border-radius:5px;
-  padding:7px 12px;font-size:22px;
+  display:none;
+  background:transparent;
+  color:white;
+  border:1px solid #555;
+  border-radius:5px;
+  padding:7px 12px;
+  font-size:22px;
 }
 
 /* HERO */
+
 .hero {
-  min-height:690px;display:flex;align-items:center;
+  min-height:690px;
+  display:flex;
+  align-items:center;
   background:
     linear-gradient(90deg,rgba(0,0,0,.95),rgba(0,0,0,.62)),
     url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85")
     center/cover;
 }
+
 .hero-content {padding:65px 0}
+
 .hero-logo {
-  width:min(420px,95%);height:auto;object-fit:contain;
+  width:min(420px,95%);
+  height:auto;
+  object-fit:contain;
   margin:18px 0;
 }
+
 .hero h1 {
   font-size:clamp(36px,6vw,65px);
-  line-height:1.1;font-weight:900;margin:12px 0;
+  line-height:1.1;
+  font-weight:900;
+  margin:12px 0;
 }
-.hero h2 {font-size:clamp(17px,2.5vw,25px);margin:20px 0}
-.hero p {color:#ddd;max-width:620px;font-size:14px}
-.hero-buttons {display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+
+.hero h2 {
+  font-size:clamp(17px,2.5vw,25px);
+  margin:20px 0;
+}
+
+.hero p {
+  color:#ddd;
+  max-width:620px;
+  font-size:14px;
+}
+
+.hero-buttons {
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:28px;
+}
+
 .hero-verse {
   border-left:3px solid var(--red);
-  padding-left:17px;margin-top:35px;
-  max-width:620px;color:#ddd;
-  font-size:13px;font-style:italic;
+  padding-left:17px;
+  margin-top:35px;
+  max-width:620px;
+  color:#ddd;
+  font-size:13px;
+  font-style:italic;
 }
+
 .hero-verse strong {
-  display:block;color:white;font-size:11px;
-  font-style:normal;margin-top:8px;
+  display:block;
+  color:white;
+  font-size:11px;
+  font-style:normal;
+  margin-top:8px;
 }
 
 /* VALUES */
-.values {background:#1b1b1b;padding:28px 0}
+
+.values {
+  background:#1b1b1b;
+  padding:28px 0;
+}
+
 .values-grid {
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:15px;text-align:center;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  text-align:center;
 }
+
 .value {
-  font-size:13px;font-weight:800;
-  text-transform:uppercase;letter-spacing:1px;
+  font-size:13px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1px;
 }
-.value span {color:var(--red);margin-right:7px}
+
+.value span {
+  color:var(--red);
+  margin-right:7px;
+}
 
 /* PRICING */
+
 .pricing-grid {
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:25px;
 }
+
 .package {
-  background:var(--card);border:1px solid #383838;
-  border-radius:10px;padding:32px;
-  display:flex;flex-direction:column;
-  position:relative;transition:.2s;
+  background:var(--card);
+  border:1px solid #383838;
+  border-radius:10px;
+  padding:32px;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  transition:.2s;
 }
-.package:hover {border-color:var(--red);transform:translateY(-3px)}
-.package.featured {border:2px solid var(--red)}
+
+.package:hover {
+  border-color:var(--red);
+  transform:translateY(-3px);
+}
+
+.package.featured {
+  border:2px solid var(--red);
+}
+
 .package-badge {
-  position:absolute;right:18px;top:-14px;
-  background:var(--red);border-radius:4px;
-  padding:6px 13px;font-size:10px;font-weight:800;
+  position:absolute;
+  right:18px;
+  top:-14px;
+  background:var(--red);
+  border-radius:4px;
+  padding:6px 13px;
+  font-size:10px;
+  font-weight:800;
 }
-.package-icon {font-size:30px;margin-bottom:12px}
-.package h3 {font-size:21px;margin:0 0 10px}
+
+.package-icon {
+  font-size:30px;
+  margin-bottom:12px;
+}
+
+.package h3 {
+  font-size:21px;
+  margin:0 0 10px;
+}
+
 .price {
-  color:var(--red);font-size:43px;
-  font-weight:900;line-height:1.2;margin:10px 0 18px;
+  color:var(--red);
+  font-size:43px;
+  font-weight:900;
+  line-height:1.2;
+  margin:10px 0 18px;
 }
+
 .price sup {font-size:17px}
+
 .price small {
-  display:block;color:#aaa;font-size:11px;
-  font-weight:600;text-transform:uppercase;margin-top:7px;
+  display:block;
+  color:#aaa;
+  font-size:11px;
+  font-weight:600;
+  text-transform:uppercase;
+  margin-top:7px;
 }
-.package-description {color:var(--muted);font-size:13px;margin-bottom:18px}
-.package ul {list-style:none;padding:0;margin:0 0 25px}
-.package li {font-size:12px;color:#ddd;padding:6px 0}
+
+.package-description {
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:18px;
+}
+
+.package ul {
+  list-style:none;
+  padding:0;
+  margin:0 0 25px;
+}
+
+.package li {
+  font-size:12px;
+  color:#ddd;
+  padding:6px 0;
+}
+
 .package li::before {
-  content:"✓";color:var(--red);
-  font-weight:900;margin-right:9px;
+  content:"✓";
+  color:var(--red);
+  font-weight:900;
+  margin-right:9px;
 }
+
 .package .btn {margin-top:auto}
+
 .package-saving {
-  color:var(--red);font-size:12px;
-  font-weight:800;margin-bottom:20px;
+  color:var(--red);
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:20px;
 }
+
 .disclaimer {
-  background:#1c1c1c;border-left:4px solid var(--red);
-  border-radius:5px;padding:24px;margin-top:35px;
+  background:#1c1c1c;
+  border-left:4px solid var(--red);
+  border-radius:5px;
+  padding:24px;
+  margin-top:35px;
 }
-.disclaimer p {color:#ccc;font-size:12px;margin:0}
+
+.disclaimer p {
+  color:#ccc;
+  font-size:12px;
+  margin:0;
+}
+
 .disclaimer strong {color:var(--red)}
 
 /* SERVICE COMPARISON */
+
 .comparison {background:#171717}
+
 .comparison-scroll {
-  overflow-x:auto;border:1px solid #383838;
+  overflow-x:auto;
+  border:1px solid #383838;
   border-radius:10px;
 }
+
 .comparison-table {
-  width:100%;min-width:740px;
-  border-collapse:collapse;background:#222;
+  width:100%;
+  min-width:740px;
+  border-collapse:collapse;
+  background:#222;
   text-align:center;
 }
+
 .comparison-table th,
 .comparison-table td {
   padding:16px 12px;
   border-bottom:1px solid #383838;
   font-size:12px;
 }
+
 .comparison-table thead th {
-  background:#292929;font-weight:800;
+  background:#292929;
+  font-weight:800;
 }
+
 .comparison-table th:first-child {
-  text-align:left;padding-left:20px;width:29%;
+  text-align:left;
+  padding-left:20px;
+  width:29%;
 }
-.comparison-table tbody tr:hover {background:#292929}
-.comparison-table .full-column {background:rgba(229,57,53,.09)}
-.comparison-table thead .full-column {background:#8d2424}
+
+.comparison-table tbody tr:hover {
+  background:#292929;
+}
+
+.comparison-table .full-column {
+  background:rgba(229,57,53,.09);
+}
+
+.comparison-table thead .full-column {
+  background:#8d2424;
+}
+
 .comparison-price {
-  color:var(--red);font-size:20px;
-  font-weight:900;margin-top:6px;
+  color:var(--red);
+  font-size:20px;
+  font-weight:900;
+  margin-top:6px;
 }
+
 .comparison-table thead .full-column .comparison-price {
   color:white;
 }
-.check {color:#45d17b;font-size:21px;font-weight:900}
-.dash {color:#777;font-size:19px}
-.compare-book {
-  display:inline-block;background:var(--red);
-  padding:10px 12px;border-radius:4px;
-  font-size:11px;font-weight:800;
+
+.check {
+  color:#45d17b;
+  font-size:21px;
+  font-weight:900;
 }
-.compare-book:hover {background:var(--red-dark)}
+
+.dash {
+  color:#777;
+  font-size:19px;
+}
+
+.compare-book {
+  display:inline-block;
+  background:var(--red);
+  padding:10px 12px;
+  border-radius:4px;
+  font-size:11px;
+  font-weight:800;
+}
+
+.compare-book:hover {
+  background:var(--red-dark);
+}
+
 .comparison-note {
-  color:#aaa;font-size:12px;
-  margin-top:20px;line-height:1.8;
+  color:#aaa;
+  font-size:12px;
+  margin-top:20px;
+  line-height:1.8;
 }
 
 /* ABOUT */
+
 .about {background:var(--dark)}
+
 .about-grid {
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:55px;align-items:center;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
 }
+
 .about-image img {
-  width:100%;height:430px;
-  object-fit:cover;border-radius:8px;
+  width:100%;
+  height:430px;
+  object-fit:cover;
+  border-radius:8px;
 }
-.about-text p {color:var(--muted);font-size:14px;margin-bottom:18px}
+
+.about-text p {
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:18px;
+}
+
 .about-highlight {
-  background:#242424;border-left:3px solid var(--red);
-  padding:15px 18px;font-size:14px;font-weight:700;
+  background:#242424;
+  border-left:3px solid var(--red);
+  padding:15px 18px;
+  font-size:14px;
+  font-weight:700;
 }
 
 /* FAITH */
+
 .faith-panel {
-  max-width:900px;margin:auto;padding:55px 45px;
-  text-align:center;background:#1b1b1b;
-  border:1px solid #353535;border-top:4px solid var(--red);
+  max-width:900px;
+  margin:auto;
+  padding:55px 45px;
+  text-align:center;
+  background:#1b1b1b;
+  border:1px solid #353535;
+  border-top:4px solid var(--red);
   border-radius:9px;
 }
-.faith-cross {font-size:45px;color:var(--red)}
+
+.faith-cross {
+  font-size:45px;
+  color:var(--red);
+}
+
 .faith-panel p {
-  color:#ccc;font-size:14px;
-  max-width:690px;margin:0 auto 20px;
+  color:#ccc;
+  font-size:14px;
+  max-width:690px;
+  margin:0 auto 20px;
 }
+
 .faith-quote {
-  border-top:1px solid #444;padding-top:27px;
-  margin-top:30px;font-size:17px;font-style:italic;
+  border-top:1px solid #444;
+  padding-top:27px;
+  margin-top:30px;
+  font-size:17px;
+  font-style:italic;
 }
+
 .faith-reference {
-  color:var(--red);font-size:12px;
-  font-weight:800;margin-top:12px;
+  color:var(--red);
+  font-size:12px;
+  font-weight:800;
+  margin-top:12px;
 }
 
 /* GALLERY */
+
 .gallery {background:var(--dark)}
+
 .gallery-grid {
-  display:grid;grid-template-columns:repeat(3,1fr);
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
   gap:16px;
 }
-.gallery-item {border-radius:8px;overflow:hidden}
+
+.gallery-item {
+  border-radius:8px;
+  overflow:hidden;
+}
+
 .gallery-item img {
-  width:100%;height:255px;object-fit:cover;
+  width:100%;
+  height:255px;
+  object-fit:cover;
   transition:transform .3s;
 }
-.gallery-item:hover img {transform:scale(1.05)}
-.gallery-note {color:#999;font-size:11px;text-align:center;margin-top:18px}
+
+.gallery-item:hover img {
+  transform:scale(1.05);
+}
+
+.gallery-note {
+  color:#999;
+  font-size:11px;
+  text-align:center;
+  margin-top:18px;
+}
 
 /* FORMS */
+
 .booking {background:#141414}
+
 .booking-layout {
-  display:grid;grid-template-columns:1.5fr 1fr;
-  gap:28px;align-items:start;
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:28px;
+  align-items:start;
 }
-.form-card,.booking-aside {
-  background:#222;border:1px solid #383838;
-  border-radius:10px;padding:30px;
+
+.form-card,
+.booking-aside {
+  background:#222;
+  border:1px solid #383838;
+  border-radius:10px;
+  padding:30px;
 }
-.form-card h3,.booking-aside h3 {margin-top:0}
+
+.form-card h3,
+.booking-aside h3 {
+  margin-top:0;
+}
+
 .booking-fields {
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:17px;
 }
+
 .field {min-width:0}
 .field.full {grid-column:1/-1}
+
 .field label {
-  display:block;font-size:12px;
-  font-weight:700;margin:15px 0 7px;
+  display:block;
+  font-size:12px;
+  font-weight:700;
+  margin:15px 0 7px;
 }
-.field input,.field select,.field textarea {
-  width:100%;min-height:45px;background:#111;
-  color:white;border:1px solid #555;
-  border-radius:5px;padding:12px;font-size:13px;
+
+.field input,
+.field select,
+.field textarea {
+  width:100%;
+  min-height:45px;
+  background:#111;
+  color:white;
+  border:1px solid #555;
+  border-radius:5px;
+  padding:12px;
+  font-size:13px;
 }
-.field textarea {min-height:120px;resize:vertical}
-.field input:focus,.field select:focus,.field textarea:focus {
-  outline:2px solid var(--red);outline-offset:1px;
+
+.field textarea {
+  min-height:120px;
+  resize:vertical;
 }
-.form-note {color:#aaa;font-size:11px;margin:18px 0}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline:2px solid var(--red);
+  outline-offset:1px;
+}
+
+.form-note {
+  color:#aaa;
+  font-size:11px;
+  margin:18px 0;
+}
+
 .submit-btn {
-  display:block;width:100%;background:var(--red);
-  color:white;border:0;border-radius:5px;
-  padding:15px;margin-top:22px;
-  font-size:12px;font-weight:800;
+  display:block;
+  width:100%;
+  background:var(--red);
+  color:white;
+  border:0;
+  border-radius:5px;
+  padding:15px;
+  margin-top:22px;
+  font-size:12px;
+  font-weight:800;
 }
-.submit-btn:hover {background:var(--red-dark)}
+
+.submit-btn:hover {
+  background:var(--red-dark);
+}
+
 .estimate {
-  color:var(--red);font-size:43px;
+  color:var(--red);
+  font-size:43px;
   font-weight:900;
 }
-.booking-aside p,.booking-aside li {
-  color:#ccc;font-size:13px;
+
+.booking-aside p,
+.booking-aside li {
+  color:#ccc;
+  font-size:13px;
 }
+
 .booking-aside ol {padding-left:20px}
 .booking-aside li {margin-bottom:12px}
 
 /* REVIEWS AND QUESTIONS */
+
 .feedback {background:#191919}
+
 .feedback-grid {
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:25px;align-items:start;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:25px;
+  align-items:start;
 }
-.feedback-card > p {color:var(--muted);font-size:13px}
-.star-rating {display:flex;gap:7px;margin:12px 0 18px}
+
+.feedback-card > p {
+  color:var(--muted);
+  font-size:13px;
+}
+
+.star-rating {
+  display:flex;
+  gap:7px;
+  margin:12px 0 18px;
+}
+
 .star {
-  background:transparent;border:0;color:#777;
-  font-size:35px;padding:0 3px;line-height:1.2;
+  background:transparent;
+  border:0;
+  color:#777;
+  font-size:35px;
+  padding:0 3px;
+  line-height:1.2;
 }
+
 .star.active {color:#ffcc33}
 .star:hover {transform:scale(1.1)}
 
 /* CONTACT */
+
 .contact-grid {
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:55px;align-items:center;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
 }
-.contact-text {color:var(--muted);font-size:14px}
-.contact-detail {font-size:13px;margin:18px 0;overflow-wrap:anywhere}
+
+.contact-text {
+  color:var(--muted);
+  font-size:14px;
+}
+
+.contact-detail {
+  font-size:13px;
+  margin:18px 0;
+  overflow-wrap:anywhere;
+}
+
 .contact-detail strong {
-  display:block;color:var(--red);
-  font-size:11px;margin-bottom:5px;
+  display:block;
+  color:var(--red);
+  font-size:11px;
+  margin-bottom:5px;
 }
+
 .contact-detail a:hover {color:var(--red)}
+
 .contact-box {
-  background:var(--card);border:1px solid #383838;
-  border-radius:9px;padding:35px;
+  background:var(--card);
+  border:1px solid #383838;
+  border-radius:9px;
+  padding:35px;
 }
-.contact-box p {color:var(--muted);font-size:13px}
-.contact-box .btn {display:flex;width:100%;margin-top:12px}
+
+.contact-box p {
+  color:var(--muted);
+  font-size:13px;
+}
+
+.contact-box .btn {
+  display:flex;
+  width:100%;
+  margin-top:12px;
+}
 
 /* FOOTER */
+
 footer {
-  background:#080808;border-top:1px solid #292929;
-  padding:40px 0;text-align:center;
+  background:#080808;
+  border-top:1px solid #292929;
+  padding:40px 0;
+  text-align:center;
 }
-.footer-logo {width:250px;height:auto;margin:0 auto 18px}
-footer p {color:#999;font-size:11px;margin:9px 0}
+
+.footer-logo {
+  width:250px;
+  height:auto;
+  margin:0 auto 18px;
+}
+
+footer p {
+  color:#999;
+  font-size:11px;
+  margin:9px 0;
+}
 
 /* RESPONSIVE */
+
 @media(max-width:1100px) {
   .menu-toggle {display:block}
+
   .nav-links {
-    display:none;position:absolute;top:95px;
-    left:0;right:0;background:#141414;
-    padding:15px 5%;flex-direction:column;
-    align-items:stretch;gap:0;
+    display:none;
+    position:absolute;
+    top:95px;
+    left:0;
+    right:0;
+    background:#141414;
+    padding:15px 5%;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
     border-bottom:1px solid #333;
   }
+
   .nav-links.open {display:flex}
   .nav-links a {padding:13px;font-size:12px}
 }
+
 @media(max-width:850px) {
-  .about-grid,.contact-grid,.booking-layout {
+  .about-grid,
+  .contact-grid,
+  .booking-layout {
     grid-template-columns:1fr;
   }
 }
+
 @media(max-width:650px) {
   section {padding:65px 0}
-  .pricing-grid,.gallery-grid,
-  .booking-fields,.feedback-grid {
+
+  .pricing-grid,
+  .gallery-grid,
+  .booking-fields,
+  .feedback-grid {
     grid-template-columns:1fr;
   }
+
   .field.full {grid-column:auto}
-  .package,.form-card,.booking-aside,.contact-box {
+
+  .package,
+  .form-card,
+  .booking-aside,
+  .contact-box {
     padding:24px;
   }
+
   .faith-panel {padding:38px 22px}
   .gallery-item img {height:230px}
   .values-grid {gap:8px}
@@ -497,7 +928,7 @@ footer p {color:#999;font-size:11px;margin:9px 0}
         <div class="package-icon">🚘</div>
         <h3>Basic Exterior Wash</h3>
         <div class="price">
-          $45<sup>+*</sup>
+          $65<sup>+*</sup>
           <small>Starting Price</small>
         </div>
 
@@ -528,7 +959,7 @@ footer p {color:#999;font-size:11px;margin:9px 0}
         <div class="package-icon">✨</div>
         <h3>Interior Detail</h3>
         <div class="price">
-          $65<sup>+*</sup>
+          $85<sup>+*</sup>
           <small>Starting Price</small>
         </div>
 
@@ -622,7 +1053,7 @@ footer p {color:#999;font-size:11px;margin:9px 0}
         </ul>
 
         <p class="package-saving">
-          SAVE $15 COMPARED TO BOOKING SEPARATELY
+          SAVE $35 COMPARED TO BOOKING SEPARATELY
         </p>
 
         <a href="#booking" class="btn btn-red"
@@ -674,11 +1105,11 @@ footer p {color:#999;font-size:11px;margin:9px 0}
             <th scope="col">Services Included</th>
             <th scope="col">
               Basic Exterior
-              <div class="comparison-price">$45+</div>
+              <div class="comparison-price">$65+</div>
             </th>
             <th scope="col">
               Interior
-              <div class="comparison-price">$65+</div>
+              <div class="comparison-price">$85+</div>
             </th>
             <th scope="col">
               Premium Interior
@@ -833,7 +1264,7 @@ footer p {color:#999;font-size:11px;margin:9px 0}
       Additional charges will be discussed and
       approved before work begins.
       Full Detail combines Premium Interior
-      and Basic Exterior, saving $15 compared
+      and Basic Exterior, saving $35 compared
       with booking separately.
       On mobile, swipe horizontally to view
       all four packages.
@@ -1069,11 +1500,11 @@ footer p {color:#999;font-size:11px;margin:9px 0}
               Detailing Package *
             </label>
             <select id="servicePackage" required>
-              <option value="Basic Exterior Wash" data-price="45">
-                Basic Exterior Wash — $45+
+              <option value="Basic Exterior Wash" data-price="65">
+                Basic Exterior Wash — $65+
               </option>
-              <option value="Interior Detail" data-price="65">
-                Interior Detail — $65+
+              <option value="Interior Detail" data-price="85">
+                Interior Detail — $85+
               </option>
               <option value="Premium Interior Detail" data-price="120">
                 Premium Interior Detail — $120+
@@ -1142,7 +1573,7 @@ footer p {color:#999;font-size:11px;margin:9px 0}
       <aside class="booking-aside">
         <div class="eyebrow">Your Selected Package</div>
         <h3>ESTIMATED STARTING PRICE</h3>
-        <div class="estimate" id="bookingEstimate">$45+*</div>
+        <div class="estimate" id="bookingEstimate">$65+*</div>
 
         <p>
           This is a starting estimate,
