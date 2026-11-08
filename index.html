@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>M2J Auto Detailing | Cincinnati, Ohio</title>
-  <meta name="description" content="M2J Auto Detailing provides professional interior and exterior car detailing in Cincinnati, Ohio. Contact us to book your detail.">
-
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="M2J Auto Detailing in Cincinnati, Ohio. Faith-driven, quality-focused automotive detailing.">
+  <title>M2J Auto Detailing | Driven by Faith</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --red: #ed2525;
-      --dark: #090909;
-      --card: #151515;
+      --red: #e53935;
+      --red-dark: #b71c1c;
+      --black: #101010;
+      --dark: #181818;
+      --card: #202020;
       --white: #ffffff;
-      --gray: #aaaaaa;
+      --muted: #b6b6b6;
     }
 
     * {
@@ -28,514 +29,936 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 85px;
     }
 
     body {
       font-family: 'Montserrat', sans-serif;
-      background: var(--dark);
+      background: var(--black);
       color: var(--white);
+      line-height: 1.7;
     }
 
-    a {
-      text-decoration: none;
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font: inherit; }
+    ::selection { background: var(--red); color: white; }
+
+    .container {
+      width: min(1150px, 90%);
+      margin: auto;
     }
 
+    .section {
+      padding: 95px 0;
+    }
+
+    .section-label {
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 45px;
+    }
+
+    .center { text-align: center; }
+    .red { color: var(--red); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 25px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .4px;
+      transition: .25s;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid #777;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    /* Navigation */
     header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      min-height: 80px;
-      padding: 15px 8%;
-      background: rgba(9,9,9,.97);
+      z-index: 1000;
+      background: rgba(13, 13, 13, .97);
       border-bottom: 1px solid #292929;
+    }
+
+    .nav {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      min-height: 78px;
+      gap: 20px;
     }
 
     .logo {
-      font-size: 34px;
+      font-size: 26px;
       font-weight: 900;
-      letter-spacing: -2px;
-      color: white;
+      letter-spacing: -1px;
+      white-space: nowrap;
     }
 
-    .logo span {
+    .logo span { color: var(--red); }
+
+    .logo-cross {
       color: var(--red);
+      font-size: 20px;
+      vertical-align: top;
+      margin-left: 4px;
     }
 
-    nav {
-      display: flex;
-      gap: 28px;
-    }
-
-    nav a {
-      color: white;
-      font-size: 12px;
-      font-weight: 700;
-      transition: .2s;
-    }
-
-    nav a:hover {
-      color: var(--red);
-    }
-
-    .hero {
-      min-height: 650px;
+    .nav-links {
       display: flex;
       align-items: center;
-      padding: 90px 10%;
+      gap: 23px;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 700;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover { color: var(--red); }
+
+    .nav-links .nav-contact {
+      background: var(--red);
+      padding: 11px 16px;
+      border-radius: 4px;
+    }
+
+    .nav-links .nav-contact:hover {
+      background: var(--red-dark);
+      color: white;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid #555;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 670px;
+      display: flex;
+      align-items: center;
       background:
-        linear-gradient(90deg, rgba(0,0,0,.94), rgba(0,0,0,.35)),
-        url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2000&q=85') center/cover;
+        linear-gradient(90deg, rgba(0,0,0,.94), rgba(0,0,0,.53)),
+        url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85')
+        center / cover;
     }
 
     .hero-content {
-      max-width: 680px;
+      position: relative;
+      z-index: 1;
+      padding: 100px 0;
     }
 
-    .eyebrow {
+    .hero-eyebrow {
       color: var(--red);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
-      letter-spacing: 4px;
-      margin-bottom: 22px;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
     }
 
     .hero h1 {
-      font-size: clamp(45px, 7vw, 82px);
+      font-size: clamp(42px, 7vw, 79px);
+      line-height: 1.07;
       font-weight: 900;
-      line-height: 1.05;
-      margin-bottom: 25px;
+      letter-spacing: -2px;
+      max-width: 900px;
     }
 
-    .hero h1 span {
-      color: var(--red);
+    .hero h2 {
+      font-size: clamp(17px, 2.5vw, 25px);
+      margin: 23px 0 15px;
+      font-weight: 700;
     }
 
     .hero p {
-      color: #cccccc;
-      line-height: 1.9;
+      color: #d1d1d1;
       font-size: 15px;
-      margin-bottom: 35px;
+      max-width: 590px;
     }
 
-    .btn {
-      display: inline-block;
-      background: var(--red);
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .hero-verse {
+      margin-top: 45px;
+      padding-left: 17px;
+      border-left: 3px solid var(--red);
+      color: #ddd;
+      font-size: 13px;
+      font-style: italic;
+      max-width: 590px;
+    }
+
+    .hero-verse strong {
       color: white;
-      padding: 16px 30px;
-      border-radius: 4px;
-      font-size: 12px;
-      font-weight: 800;
-      transition: .25s;
+      font-style: normal;
+      display: block;
+      margin-top: 7px;
+      font-size: 11px;
+      letter-spacing: 1px;
     }
 
-    .btn:hover {
-      background: #b71919;
-      transform: translateY(-3px);
+    /* Values */
+    .values-strip {
+      background: #191919;
+      border-bottom: 1px solid #303030;
+      padding: 30px 0;
     }
 
-    section {
-      padding: 95px 10%;
-      scroll-margin-top: 90px;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 55px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 900;
-      margin-bottom: 15px;
-    }
-
-    .section-heading p {
-      color: var(--gray);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .services {
-      background: #101010;
-    }
-
-    .service-grid {
+    .values-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .value {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .value span {
+      color: var(--red);
+      margin-right: 10px;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
     .service-card {
       background: var(--card);
-      padding: 35px 28px;
-      border: 1px solid #292929;
-      border-radius: 6px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 35px 27px;
       transition: .25s;
     }
 
     .service-card:hover {
       border-color: var(--red);
-      transform: translateY(-6px);
+      transform: translateY(-4px);
     }
 
     .service-icon {
-      font-size: 32px;
-      color: var(--red);
-      margin-bottom: 22px;
+      font-size: 30px;
+      margin-bottom: 18px;
     }
 
     .service-card h3 {
       font-size: 19px;
-      margin-bottom: 15px;
+      font-weight: 800;
+      margin-bottom: 12px;
     }
 
     .service-card p {
-      color: var(--gray);
+      color: var(--muted);
       font-size: 13px;
-      line-height: 1.9;
+      margin-bottom: 18px;
     }
 
-    .price {
-      color: var(--red);
+    .service-card ul {
+      list-style: none;
+      color: #d0d0d0;
       font-size: 12px;
-      font-weight: 800;
-      margin-top: 25px;
     }
 
+    .service-card li {
+      padding: 5px 0;
+    }
+
+    .service-card li::before {
+      content: "✓";
+      color: var(--red);
+      font-weight: 900;
+      margin-right: 9px;
+    }
+
+    .service-note {
+      text-align: center;
+      margin-top: 35px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* About */
     .about {
+      background: #191919;
+    }
+
+    .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 65px;
       align-items: center;
     }
 
-    .about img {
+    .about-image img {
       width: 100%;
-      min-height: 350px;
+      height: 440px;
       object-fit: cover;
-      border-radius: 6px;
+      border-radius: 8px;
     }
 
-    .about h2 {
-      font-size: 38px;
-      font-weight: 900;
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .about-highlight {
+      border-left: 3px solid var(--red);
+      padding: 13px 18px;
+      background: #222;
+      font-weight: 700;
+      font-size: 14px;
+      margin-top: 25px;
+    }
+
+    /* Faith */
+    .faith-section {
+      background:
+        radial-gradient(circle at top right, rgba(229,57,53,.12), transparent 45%),
+        #101010;
+    }
+
+    .faith-panel {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      padding: 50px 45px;
+      background: #1b1b1b;
+      border: 1px solid #353535;
+      border-top: 4px solid var(--red);
+      border-radius: 9px;
+    }
+
+    .faith-cross {
+      font-size: 45px;
+      color: var(--red);
+      line-height: 1;
       margin-bottom: 25px;
     }
 
-    .about p {
-      color: var(--gray);
+    .faith-panel p {
+      color: #c8c8c8;
       font-size: 14px;
-      line-height: 2;
-      margin-bottom: 20px;
+      max-width: 680px;
+      margin: 0 auto 20px;
     }
 
+    .faith-quote {
+      margin-top: 30px;
+      padding-top: 27px;
+      border-top: 1px solid #3b3b3b;
+      color: white;
+      font-style: italic;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .faith-reference {
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 800;
+      margin-top: 12px;
+      letter-spacing: 1px;
+    }
+
+    /* Gallery */
     .gallery {
-      background: #101010;
+      background: #191919;
     }
 
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 16px;
     }
 
-    .gallery-grid img {
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 7px;
+      background: #282828;
+    }
+
+    .gallery-item img {
       width: 100%;
-      height: 250px;
+      height: 260px;
       object-fit: cover;
-      border-radius: 5px;
-      transition: .3s;
+      transition: transform .4s;
     }
 
-    .gallery-grid img:hover {
-      transform: scale(1.03);
+    .gallery-item:hover img {
+      transform: scale(1.05);
     }
 
-    .gallery-note {
-      text-align: center;
-      color: #888;
-      font-size: 12px;
-      margin-top: 25px;
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
     }
 
-    .contact {
-      text-align: center;
-      background: linear-gradient(135deg, #171717, #080808);
-    }
-
-    .contact h2 {
-      font-size: clamp(28px, 4vw, 42px);
-      margin-bottom: 20px;
-    }
-
-    .contact p {
-      color: var(--gray);
-      line-height: 1.9;
-      margin-bottom: 30px;
+    .contact-text {
+      color: var(--muted);
       font-size: 14px;
+      margin-bottom: 25px;
     }
 
-    .contact-info {
-      margin-top: 40px;
-      color: #cccccc;
-      font-size: 14px;
-      line-height: 2.7;
+    .contact-detail {
+      margin: 17px 0;
+      font-size: 13px;
+      overflow-wrap: anywhere;
     }
 
-    .contact-info a {
-      color: white;
-    }
-
-    .contact-info a:hover {
+    .contact-detail strong {
+      display: block;
       color: var(--red);
-    }
-
-    .social-link {
-      color: white;
-      font-weight: 700;
-    }
-
-    footer {
-      background: #050505;
-      border-top: 1px solid #292929;
-      text-align: center;
-      padding: 35px 10%;
-      color: #777;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       font-size: 11px;
-      line-height: 2;
     }
 
-    footer span {
+    .contact-detail a:hover {
       color: var(--red);
     }
 
-    @media (max-width: 800px) {
-      header {
+    .contact-box {
+      padding: 38px;
+      background: #202020;
+      border: 1px solid #363636;
+      border-radius: 8px;
+    }
+
+    .contact-box h3 {
+      font-size: 23px;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .contact-box .btn {
+      display: flex;
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    /* Footer */
+    footer {
+      background: #080808;
+      border-top: 1px solid #292929;
+      padding: 38px 0;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .footer-logo span { color: var(--red); }
+
+    .footer-slogan {
+      color: #ccc;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      color: #888;
+      font-size: 11px;
+      margin-top: 9px;
+    }
+
+    /* Mobile */
+    @media (max-width: 850px) {
+      .menu-toggle { display: block; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 78px;
+        left: 0;
+        right: 0;
+        background: #141414;
         flex-direction: column;
-        gap: 15px;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px 5%;
+        border-bottom: 1px solid #333;
       }
 
-      nav {
-        gap: 16px;
-        flex-wrap: wrap;
-        justify-content: center;
+      .nav-links.open { display: flex; }
+
+      .nav-links a {
+        padding: 13px;
       }
 
-      nav a {
-        font-size: 10px;
+      .nav-links .nav-contact {
+        text-align: center;
+        margin-top: 10px;
       }
 
-      .hero {
-        min-height: 550px;
-        padding: 75px 7%;
-      }
+      .services-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 35px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-image img { height: 330px; }
+    }
 
-      section {
-        padding: 70px 7%;
-      }
-
-      .service-grid,
-      .gallery-grid,
-      .about {
-        grid-template-columns: 1fr;
-      }
-
-      .about img {
-        min-height: 250px;
-      }
-
-      .gallery-grid img {
-        height: 260px;
-      }
+    @media (max-width: 520px) {
+      .section { padding: 65px 0; }
+      .hero { min-height: 630px; }
+      .hero h1 { letter-spacing: -1px; }
+      .values-grid { grid-template-columns: 1fr; gap: 15px; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item img { height: 250px; }
+      .faith-panel { padding: 38px 22px; }
+      .contact-box { padding: 26px; }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- NAVIGATION -->
   <header>
-    <a href="#home" class="logo">M<span>2J</span>.</a>
+    <nav class="nav container">
+      <a href="#home" class="logo" aria-label="M2J Auto Detailing home">
+        M<span>2J</span><span class="logo-cross">✝</span>
+      </a>
 
-    <nav>
-      <a href="#home">HOME</a>
-      <a href="#services">SERVICES</a>
-      <a href="#about">ABOUT</a>
-      <a href="#gallery">GALLERY</a>
-      <a href="#contact">CONTACT</a>
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Toggle navigation"
+        aria-controls="navLinks"
+        aria-expanded="false">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#faith">Our Faith</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact" class="nav-contact">Contact Us</a>
+      </div>
     </nav>
   </header>
 
   <main>
 
+    <!-- HERO -->
     <section class="hero" id="home">
-      <div class="hero-content">
+      <div class="container hero-content">
+        <div class="hero-eyebrow">CINCINNATI, OHIO • FAITH-DRIVEN DETAILING</div>
 
-        <div class="eyebrow">M2J AUTO DETAILING</div>
+        <h1>
+          M<span class="red">2J</span><br>
+          AUTO DETAILING
+        </h1>
 
-        <h1>MAKE EVERY<br><span>DETAIL</span> COUNT.</h1>
-
-        <p>
-          Professional automotive detailing with attention
-          to every detail. Quality service, impressive results,
-          and a vehicle that looks its best.
-        </p>
-
-        <a href="#contact" class="btn">BOOK YOUR DETAIL →</a>
-
-      </div>
-    </section>
-
-    <section class="services" id="services">
-
-      <div class="section-heading">
-        <div class="eyebrow">WHAT WE OFFER</div>
-        <h2>OUR SERVICES</h2>
-        <p>Quality care for every part of your vehicle.</p>
-      </div>
-
-      <div class="service-grid">
-
-        <div class="service-card">
-          <div class="service-icon">✦</div>
-          <h3>Interior Detailing</h3>
-          <p>
-            A thorough interior cleaning including carpets,
-            seats, floor mats, dashboard, and interior surfaces.
-          </p>
-          <div class="price">CONTACT FOR PRICING</div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">◈</div>
-          <h3>Exterior Detailing</h3>
-          <p>
-            Give your vehicle a fresh appearance with
-            a detailed exterior wash and cleaning.
-          </p>
-          <div class="price">CONTACT FOR PRICING</div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">✧</div>
-          <h3>Full Detail</h3>
-          <p>
-            Complete interior and exterior detailing
-            to clean your vehicle inside and out.
-          </p>
-          <div class="price">CONTACT FOR PRICING</div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="about" id="about">
-
-      <img
-        src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1000&q=85"
-        alt="Automotive detailing">
-
-      <div>
-        <div class="eyebrow">GET TO KNOW US</div>
-
-        <h2>ABOUT M2J DETAILING</h2>
+        <h2>Driven by Faith. <span class="red">Defined by Quality.</span></h2>
 
         <p>
-          Welcome to M2J Auto Detailing. We are three
-          people passionate about cars and committed
-          to providing quality automotive detailing.
+          Quality automotive detailing built on faith, integrity,
+          and attention to detail. We take pride in treating every
+          vehicle with care and every customer with respect.
         </p>
 
-        <p>
-          We take pride in our work and believe every vehicle
-          deserves attention to detail. Our goal is to provide
-          great service and results our customers can appreciate.
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">BOOK A DETAIL</a>
+          <a href="#services" class="btn btn-outline">EXPLORE SERVICES</a>
+        </div>
+
+        <div class="hero-verse">
+          "And whatsoever ye do, do it heartily, as to the Lord,
+          and not unto men."
+          <strong>COLOSSIANS 3:23 • KJV</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <div class="values-strip">
+      <div class="container values-grid">
+        <div class="value"><span>✝</span> Faith</div>
+        <div class="value"><span>✓</span> Integrity</div>
+        <div class="value"><span>★</span> Excellence</div>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="center">
+          <div class="section-label">What We Offer</div>
+          <h2 class="section-title">OUR <span class="red">SERVICES</span></h2>
+          <p class="section-description">
+            Whether your vehicle needs a refresh or a more complete
+            cleaning, we're committed to putting care into every detail.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service-card">
+            <div class="service-icon">🚘</div>
+            <h3>Exterior Detailing</h3>
+            <p>
+              Give your vehicle a clean, refreshed exterior
+              with careful attention to its finish.
+            </p>
+            <ul>
+              <li>Exterior hand wash</li>
+              <li>Wheel and tire cleaning</li>
+              <li>Exterior window cleaning</li>
+              <li>Exterior finishing touches</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">✨</div>
+            <h3>Interior Detailing</h3>
+            <p>
+              Refresh the inside of your vehicle and make
+              your driving experience more enjoyable.
+            </p>
+            <ul>
+              <li>Interior vacuuming</li>
+              <li>Dashboard and console cleaning</li>
+              <li>Interior window cleaning</li>
+              <li>Interior surface wipe-down</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🏁</div>
+            <h3>Full Detail</h3>
+            <p>
+              Our combined interior and exterior service
+              for a more complete vehicle refresh.
+            </p>
+            <ul>
+              <li>Interior cleaning</li>
+              <li>Exterior cleaning</li>
+              <li>Wheels and windows</li>
+              <li>Attention to the small details</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <p class="service-note">
+          Contact us for service details, pricing, and availability.
         </p>
-
-        <a href="#contact" class="btn">GET IN TOUCH →</a>
       </div>
-
     </section>
 
-    <section class="gallery" id="gallery">
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+      <div class="container about-grid">
 
-      <div class="section-heading">
-        <div class="eyebrow">OUR WORK</div>
-        <h2>THE RESULTS SPEAK</h2>
-        <p>Take a look at automotive detailing inspiration.</p>
+        <div class="about-image">
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85"
+            alt="Clean modern property exterior"
+            loading="lazy">
+        </div>
+
+        <div class="about-text">
+          <div class="section-label">Who We Are</div>
+          <h2 class="section-title">
+            ABOUT <span class="red">M2J</span>
+          </h2>
+
+          <p>
+            M2J Auto Detailing is a Cincinnati-based business
+            founded by three people who share a passion for
+            cars, hard work, and providing quality service.
+          </p>
+
+          <p>
+            We believe detailing is about more than making
+            a car look clean. It's about taking pride in our
+            work, being dependable, and building trust with
+            the people we serve.
+          </p>
+
+          <p>
+            As a faith-driven business, we strive to apply
+            Christian values to the way we operate, from
+            the effort we put into each vehicle to the
+            respect we show our customers.
+          </p>
+
+          <div class="about-highlight">
+            Built on Faith. Driven by Excellence.
+          </div>
+        </div>
+
       </div>
-
-      <div class="gallery-grid">
-
-        <img
-          src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=85"
-          alt="Sports car">
-
-        <img
-          src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=85"
-          alt="Luxury automobile">
-
-        <img
-          src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=800&q=85"
-          alt="Car detailing">
-
-      </div>
-
-      <p class="gallery-note">
-        Replace these example photos with pictures of your actual work.
-      </p>
-
     </section>
 
-    <section class="contact" id="contact">
+    <!-- FAITH -->
+    <section class="section faith-section" id="faith">
+      <div class="container">
 
-      <div class="eyebrow">LET'S GET STARTED</div>
+        <div class="faith-panel">
+          <div class="faith-cross" aria-hidden="true">✝</div>
 
-      <h2>READY FOR A CLEANER RIDE?</h2>
+          <div class="section-label">The Foundation of M2J</div>
 
-      <p>
-        Interested in getting your vehicle detailed?
-        Reach out to M2J Auto Detailing to get started.
-      </p>
+          <h2 class="section-title">
+            OUR <span class="red">FAITH</span>
+          </h2>
 
-      <a href="mailto:m2jautodeatiling@gmail.com" class="btn">
-        CONTACT US →
-      </a>
+          <p>
+            At M2J Auto Detailing, our Christian faith
+            is an important part of who we are and
+            how we approach our business.
+          </p>
 
-      <div class="contact-info">
+          <p>
+            We believe in honoring God through hard work,
+            honesty, integrity, and serving others.
+            Our goal isn't just to deliver a clean car.
+            It's to make sure every customer feels valued,
+            respected, and confident in the service
+            they receive.
+          </p>
+
+          <p>
+            We strive to reflect our values through
+            our actions, treating people fairly and
+            giving our best effort in everything we do.
+            Everyone is welcome at M2J.
+          </p>
+
+          <div class="faith-quote">
+            "Let all your things be done with charity."
+          </div>
+
+          <div class="faith-reference">
+            1 CORINTHIANS 16:14 • KJV
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="center">
+          <div class="section-label">Attention to Detail</div>
+          <h2 class="section-title">
+            OUR <span class="red">GALLERY</span>
+          </h2>
+          <p class="section-description">
+            A look at the automotive style and quality
+            that inspire our work.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=85"
+              alt="Black sports car"
+              loading="lazy">
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85"
+              alt="Silver sports car"
+              loading="lazy">
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=85"
+              alt="Modern car exterior"
+              loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+
         <div>
-          Email:
-          <a href="mailto:m2jautodeatiling@gmail.com">
-            m2jautodeatiling@gmail.com
+          <div class="section-label">Get In Touch</div>
+
+          <h2 class="section-title">
+            READY FOR A <span class="red">CLEAN CAR?</span>
+          </h2>
+
+          <p class="contact-text">
+            Interested in getting your vehicle detailed?
+            Reach out to M2J Auto Detailing to ask
+            about pricing, services, and scheduling.
+            We'd be happy to hear from you.
+          </p>
+
+          <div class="contact-detail">
+            <strong>Service Area</strong>
+            Cincinnati, Ohio
+          </div>
+
+          <div class="contact-detail">
+            <strong>Email</strong>
+            <a href="mailto:m2jautodeatiling@gmail.com">
+              m2jautodeatiling@gmail.com
+            </a>
+          </div>
+
+          <div class="contact-detail">
+            <strong>Instagram</strong>
+            <a
+              href="https://www.instagram.com/m2jautodetailing/"
+              target="_blank"
+              rel="noopener noreferrer">
+              @m2jautodetailing
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-box">
+          <h3>LET'S GET STARTED</h3>
+
+          <p>
+            Send us a message with your vehicle,
+            the service you're interested in,
+            and any questions you have.
+          </p>
+
+          <a
+            href="mailto:m2jautodeatiling@gmail.com?subject=M2J%20Detailing%20Inquiry"
+            class="btn btn-primary">
+            EMAIL US
+          </a>
+
+          <a
+            href="https://www.instagram.com/m2jautodetailing/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline">
+            MESSAGE ON INSTAGRAM
           </a>
         </div>
 
-        <div>
-          Instagram:
-          <a class="social-link"
-             href="https://www.instagram.com/m2jautodetailing/"
-             target="_blank"
-             rel="noopener noreferrer">
-            @m2jautodetailing
-          </a>
-        </div>
-
-        <div>Service Area: Cincinnati, Ohio</div>
       </div>
-
     </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    © 2026 <span>M2J AUTO DETAILING</span>. ALL RIGHTS RESERVED.
-    <br>
-    PROFESSIONAL AUTOMOTIVE DETAILING.
-    <br>
-    CINCINNATI, OHIO
+    <div class="container">
+      <div class="footer-logo">
+        M<span>2J</span> ✝
+      </div>
+
+      <div class="footer-slogan">
+        Driven by Faith. Defined by Quality.
+      </div>
+
+      <p>Colossians 3:23</p>
+      <p>Cincinnati, Ohio</p>
+      <p>&copy; <span id="year"></span> M2J Auto Detailing. All rights reserved.</p>
+    </div>
   </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? '✕' : '☰';
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
 </html>
