@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#101010">
-<meta name="description" content="M2J Auto Detailing in Cincinnati, Ohio. Faith-driven auto detailing.">
+<meta name="description" content="M2J Auto Detailing offers faith-driven auto detailing in Cincinnati, Ohio.">
 <title>M2J Auto Detailing | Driven by Faith</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,17 +15,14 @@
 <style>
 :root {
   --red: #e53935;
-  --dark-red: #ba2525;
+  --darkred: #b71c1c;
   --black: #101010;
   --dark: #191919;
   --card: #222;
-  --white: #fff;
   --muted: #bcbcbc;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
@@ -35,41 +32,23 @@ html {
 body {
   margin: 0;
   background: var(--black);
-  color: var(--white);
-  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-family: Montserrat, Arial, sans-serif;
   line-height: 1.7;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-button, input, select, textarea {
-  font: inherit;
-}
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+img { max-width: 100%; display: block; }
 
 .container {
   width: min(1150px, 90%);
   margin: auto;
 }
 
-section {
-  padding: 85px 0;
-}
-
-.red {
-  color: var(--red);
-}
-
-.center {
-  text-align: center;
-}
+section { padding: 85px 0; }
+.red { color: var(--red); }
+.center { text-align: center; }
 
 .section-label {
   color: var(--red);
@@ -82,8 +61,8 @@ section {
 
 .section-title {
   font-size: clamp(29px, 4vw, 43px);
-  font-weight: 900;
   line-height: 1.2;
+  font-weight: 900;
   margin: 0 0 20px;
 }
 
@@ -96,21 +75,23 @@ section {
 
 .btn {
   display: inline-flex;
-  justify-content: center;
   align-items: center;
-  padding: 14px 25px;
-  border: 1px solid #777;
+  justify-content: center;
+  padding: 14px 24px;
   border-radius: 5px;
+  border: 1px solid #777;
+  background: transparent;
   color: white;
   font-size: 12px;
   font-weight: 800;
   text-align: center;
   cursor: pointer;
-  transition: 0.2s;
+  transition: .2s;
 }
 
 .btn:hover {
   border-color: var(--red);
+  transform: translateY(-2px);
 }
 
 .btn-red {
@@ -118,53 +99,84 @@ section {
   border-color: var(--red);
 }
 
-.btn-red:hover {
-  background: var(--dark-red);
+.btn-red:hover { background: var(--darkred); }
+
+/* LOGO - SELF CONTAINED */
+
+.logo-art {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-.btn-outline {
-  background: transparent;
+.logo-lockup {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
 }
 
-/* HEADER */
+.logo-lockup svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.logo-wordmark {
+  font-size: 34px;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.logo-wordmark span { color: var(--red); }
+
+.logo-subtitle {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-top: 5px;
+}
+
+.nav-logo {
+  width: 135px;
+  flex-shrink: 0;
+}
+
+.nav-logo .logo-wordmark { font-size: 26px; }
+.nav-logo .logo-subtitle { font-size: 7px; letter-spacing: 2px; }
+
+.hero-logo {
+  width: min(360px, 85%);
+  margin-bottom: 28px;
+}
+
+.hero-logo .logo-wordmark { font-size: 72px; }
+.hero-logo .logo-subtitle { font-size: 14px; letter-spacing: 5px; }
+
+.footer-logo {
+  width: 190px;
+  margin: 0 auto 18px;
+}
+
+/* NAVIGATION */
 
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(13,13,13,0.97);
+  background: rgba(13,13,13,.97);
   border-bottom: 1px solid #303030;
 }
 
 .nav {
-  min-height: 82px;
+  min-height: 90px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
 }
-
-/* CUSTOM LOGO */
-
-.header-logo {
-  width: 125px;
-  height: 72px;
-  object-fit: contain;
-}
-
-.hero-logo {
-  width: min(450px, 100%);
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.footer-logo {
-  width: 220px;
-  height: auto;
-  margin: 0 auto 15px;
-}
-
-/* NAVIGATION */
 
 .nav-links {
   display: flex;
@@ -175,26 +187,23 @@ header {
 .nav-links a {
   font-size: 12px;
   font-weight: 700;
-  transition: color 0.2s;
 }
 
-.nav-links a:hover {
-  color: var(--red);
-}
+.nav-links a:hover { color: var(--red); }
 
 .nav-links .contact-nav {
   background: var(--red);
+  color: white;
   padding: 11px 16px;
   border-radius: 4px;
-  color: white;
 }
 
 .menu-toggle {
   display: none;
-  background: none;
+  background: transparent;
   border: 1px solid #555;
-  border-radius: 5px;
   color: white;
+  border-radius: 5px;
   padding: 7px 12px;
   font-size: 22px;
   cursor: pointer;
@@ -203,18 +212,16 @@ header {
 /* HERO */
 
 .hero {
-  min-height: 700px;
+  min-height: 690px;
   display: flex;
   align-items: center;
   background:
-    linear-gradient(90deg, rgba(0,0,0,0.95), rgba(0,0,0,0.6)),
+    linear-gradient(90deg,rgba(0,0,0,.96),rgba(0,0,0,.60)),
     url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85")
     center/cover;
 }
 
-.hero-content {
-  padding: 80px 0;
-}
+.hero-content { padding: 80px 0; }
 
 .hero-label {
   color: var(--red);
@@ -225,20 +232,20 @@ header {
 }
 
 .hero h1 {
-  font-size: clamp(40px, 6vw, 72px);
+  font-size: clamp(37px,6vw,72px);
   font-weight: 900;
   line-height: 1.1;
-  margin: 15px 0;
+  margin: 12px 0;
 }
 
 .hero h2 {
-  font-size: clamp(18px, 2.5vw, 26px);
+  font-size: clamp(18px,2.5vw,26px);
   margin: 20px 0;
 }
 
 .hero p {
   color: #ddd;
-  max-width: 600px;
+  max-width: 610px;
   font-size: 14px;
 }
 
@@ -250,19 +257,19 @@ header {
 }
 
 .hero-verse {
-  max-width: 600px;
+  max-width: 610px;
   margin-top: 40px;
   padding-left: 18px;
   border-left: 3px solid var(--red);
-  color: #ddd;
   font-size: 13px;
   font-style: italic;
+  color: #ddd;
 }
 
 .hero-verse strong {
   display: block;
-  color: white;
   font-size: 11px;
+  color: white;
   font-style: normal;
   margin-top: 8px;
 }
@@ -271,13 +278,13 @@ header {
 
 .values {
   background: #1b1b1b;
-  padding: 30px 0;
   border-bottom: 1px solid #333;
+  padding: 30px 0;
 }
 
 .values-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 20px;
   text-align: center;
 }
@@ -298,19 +305,19 @@ header {
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2,minmax(0,1fr));
   gap: 25px;
 }
 
 .package {
-  position: relative;
   background: var(--card);
   border: 1px solid #383838;
   border-radius: 10px;
   padding: 34px;
   display: flex;
   flex-direction: column;
-  transition: 0.2s;
+  position: relative;
+  transition: .2s;
 }
 
 .package:hover {
@@ -318,14 +325,12 @@ header {
   transform: translateY(-3px);
 }
 
-.package.featured {
-  border: 2px solid var(--red);
-}
+.package.featured { border: 2px solid var(--red); }
 
 .package-badge {
   position: absolute;
-  right: 20px;
   top: -15px;
+  right: 20px;
   background: var(--red);
   padding: 7px 14px;
   border-radius: 4px;
@@ -351,9 +356,7 @@ header {
   margin: 10px 0 18px;
 }
 
-.price sup {
-  font-size: 17px;
-}
+.price sup { font-size: 17px; }
 
 .price small {
   display: block;
@@ -389,9 +392,7 @@ header {
   margin-right: 9px;
 }
 
-.package .btn {
-  margin-top: auto;
-}
+.package .btn { margin-top: auto; }
 
 .package-saving {
   color: var(--red);
@@ -404,25 +405,21 @@ header {
   background: #1c1c1c;
   border-left: 4px solid var(--red);
   border-radius: 5px;
-  margin-top: 35px;
   padding: 25px;
+  margin-top: 35px;
 }
 
 .disclaimer p {
-  color: #ccc;
   font-size: 12px;
+  color: #ccc;
   margin: 0;
 }
 
-.disclaimer strong {
-  color: var(--red);
-}
+.disclaimer strong { color: var(--red); }
 
 /* ABOUT */
 
-.about {
-  background: var(--dark);
-}
+.about { background: var(--dark); }
 
 .about-grid {
   display: grid;
@@ -457,8 +454,8 @@ header {
 .faith-panel {
   max-width: 900px;
   margin: auto;
-  text-align: center;
   padding: 55px 45px;
+  text-align: center;
   background: #1b1b1b;
   border: 1px solid #353535;
   border-top: 4px solid var(--red);
@@ -494,13 +491,11 @@ header {
 
 /* GALLERY */
 
-.gallery {
-  background: var(--dark);
-}
+.gallery { background: var(--dark); }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 16px;
 }
 
@@ -513,18 +508,16 @@ header {
   width: 100%;
   height: 260px;
   object-fit: cover;
-  transition: transform 0.3s;
+  transition: transform .3s;
 }
 
 .gallery-item:hover img {
   transform: scale(1.05);
 }
 
-/* BOOKING FORM */
+/* BOOKING */
 
-.booking {
-  background: #141414;
-}
+.booking { background: #141414; }
 
 .booking-layout {
   display: grid;
@@ -541,24 +534,14 @@ header {
   padding: 30px;
 }
 
-.booking-form h3,
-.booking-aside h3 {
-  margin-top: 0;
-}
-
 .booking-fields {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2,minmax(0,1fr));
   gap: 17px;
 }
 
-.booking-field {
-  min-width: 0;
-}
-
-.booking-field.full {
-  grid-column: 1 / -1;
-}
+.booking-field { min-width: 0; }
+.booking-field.full { grid-column: 1 / -1; }
 
 .booking-field label {
   display: block;
@@ -603,9 +586,7 @@ header {
   color: #aaa;
 }
 
-.booking-submit {
-  width: 100%;
-}
+.booking-submit { width: 100%; }
 
 .estimate {
   color: var(--red);
@@ -619,13 +600,8 @@ header {
   font-size: 13px;
 }
 
-.booking-aside ol {
-  padding-left: 20px;
-}
-
-.booking-aside li {
-  margin-bottom: 12px;
-}
+.booking-aside ol { padding-left: 20px; }
+.booking-aside li { margin-bottom: 12px; }
 
 /* CONTACT */
 
@@ -654,9 +630,7 @@ header {
   margin-bottom: 5px;
 }
 
-.contact-detail a:hover {
-  color: var(--red);
-}
+.contact-detail a:hover { color: var(--red); }
 
 .contact-box {
   background: var(--card);
@@ -691,17 +665,15 @@ footer p {
   margin: 9px 0;
 }
 
-/* MOBILE RESPONSIVENESS */
+/* MOBILE */
 
-@media (max-width: 900px) {
-  .menu-toggle {
-    display: block;
-  }
+@media(max-width:900px) {
+  .menu-toggle { display: block; }
 
   .nav-links {
     display: none;
     position: absolute;
-    top: 82px;
+    top: 90px;
     left: 0;
     right: 0;
     background: #141414;
@@ -712,13 +684,8 @@ footer p {
     border-bottom: 1px solid #333;
   }
 
-  .nav-links.open {
-    display: flex;
-  }
-
-  .nav-links a {
-    padding: 13px;
-  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 13px; }
 
   .about-grid,
   .contact-grid,
@@ -727,14 +694,8 @@ footer p {
   }
 }
 
-@media (max-width: 650px) {
-  section {
-    padding: 65px 0;
-  }
-
-  .hero {
-    min-height: 650px;
-  }
+@media(max-width:650px) {
+  section { padding: 65px 0; }
 
   .pricing-grid,
   .gallery-grid,
@@ -742,9 +703,7 @@ footer p {
     grid-template-columns: 1fr;
   }
 
-  .booking-field.full {
-    grid-column: auto;
-  }
+  .booking-field.full { grid-column: auto; }
 
   .package,
   .booking-form,
@@ -753,40 +712,97 @@ footer p {
     padding: 24px;
   }
 
-  .values-grid {
-    gap: 8px;
-  }
+  .faith-panel { padding: 38px 22px; }
 
-  .value {
-    font-size: 10px;
-  }
+  .gallery-item img { height: 240px; }
 
-  .faith-panel {
-    padding: 38px 22px;
-  }
+  .values-grid { gap: 8px; }
+  .value { font-size: 10px; }
 
-  .gallery-item img {
-    height: 240px;
-  }
-
-  .header-logo {
-    width: 110px;
-  }
+  .hero-logo .logo-wordmark { font-size: 56px; }
+  .hero-logo .logo-subtitle { font-size: 11px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- REUSABLE LOGO GRAPHIC -->
+<!-- This is embedded directly in HTML, so no PNG is needed. -->
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     style="position:absolute;width:0;height:0;overflow:hidden"
+     aria-hidden="true">
+  <symbol id="m2j-car" viewBox="0 0 300 95">
+    <!-- Cross -->
+    <path d="M150 3 V34 M139 14 H161"
+          fill="none"
+          stroke="#e53935"
+          stroke-width="6"
+          stroke-linecap="round"/>
+
+    <!-- Red roof accent -->
+    <path d="M42 57 Q95 5 150 39 Q205 5 258 57"
+          fill="none"
+          stroke="#e53935"
+          stroke-width="3"
+          opacity=".9"/>
+
+    <!-- Car silhouette -->
+    <path d="M30 73
+             L49 68
+             Q65 61 82 43
+             Q93 34 112 34
+             H188
+             Q207 34 218 43
+             Q235 61 251 68
+             L270 73"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="5"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+
+    <!-- Windshield -->
+    <path d="M91 49 Q107 39 125 39 H175 Q193 39 209 49"
+          fill="none"
+          stroke="#a5a5a5"
+          stroke-width="2.5"/>
+
+    <!-- Headlights -->
+    <path d="M43 74 L87 77 L72 84 L47 81 Z"
+          fill="#ffffff"/>
+    <path d="M257 74 L213 77 L228 84 L253 81 Z"
+          fill="#ffffff"/>
+
+    <!-- Front lower edge -->
+    <path d="M83 87 Q150 94 217 87"
+          fill="none"
+          stroke="#e53935"
+          stroke-width="3"
+          stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<!-- NAVIGATION -->
 <header>
   <nav class="nav container">
 
-    <a href="#home" aria-label="M2J Auto Detailing Home">
-      <img
-        src="m2j-logo.png"
-        alt="M2J Auto Detailing Logo"
-        class="header-logo">
+    <a href="#home"
+       class="logo-lockup nav-logo"
+       aria-label="M2J Auto Detailing Home">
+
+      <svg viewBox="0 0 300 95" aria-hidden="true">
+        <use href="#m2j-car"></use>
+      </svg>
+
+      <div class="logo-wordmark">
+        M<span>2</span>J
+      </div>
+
+      <div class="logo-subtitle">
+        AUTO DETAILING
+      </div>
     </a>
 
     <button
@@ -821,10 +837,19 @@ footer p {
       CINCINNATI, OHIO • FAITH-DRIVEN DETAILING
     </div>
 
-    <img
-      src="m2j-logo.png"
-      alt="M2J Auto Detailing"
-      class="hero-logo">
+    <div class="logo-lockup hero-logo">
+      <svg viewBox="0 0 300 95" aria-hidden="true">
+        <use href="#m2j-car"></use>
+      </svg>
+
+      <div class="logo-wordmark">
+        M<span>2</span>J
+      </div>
+
+      <div class="logo-subtitle">
+        AUTO DETAILING
+      </div>
+    </div>
 
     <h1>
       M<span class="red">2J</span>
@@ -848,7 +873,7 @@ footer p {
         VIEW PRICING
       </a>
 
-      <a href="#booking" class="btn btn-outline">
+      <a href="#booking" class="btn">
         BOOK A DETAIL
       </a>
     </div>
@@ -877,11 +902,9 @@ footer p {
 
     <div class="center">
       <div class="section-label">Our Services</div>
-
       <h2 class="section-title">
         DETAILING <span class="red">PACKAGES</span>
       </h2>
-
       <p class="section-description">
         Choose the detailing package that best fits
         your vehicle. Every package is completed
@@ -894,7 +917,6 @@ footer p {
       <!-- BASIC EXTERIOR -->
       <div class="package">
         <div class="package-icon">🚘</div>
-
         <h3>Basic Exterior Wash</h3>
 
         <div class="price">
@@ -920,7 +942,9 @@ footer p {
           <li>Final exterior inspection</li>
         </ul>
 
-        <a href="#booking" class="btn btn-outline">
+        <a href="#booking"
+           class="btn"
+           data-book-package="Basic Exterior Wash">
           REQUEST THIS PACKAGE
         </a>
       </div>
@@ -928,7 +952,6 @@ footer p {
       <!-- INTERIOR -->
       <div class="package">
         <div class="package-icon">✨</div>
-
         <h3>Interior Detail</h3>
 
         <div class="price">
@@ -957,15 +980,16 @@ footer p {
           <li>Final interior inspection</li>
         </ul>
 
-        <a href="#booking" class="btn btn-outline">
+        <a href="#booking"
+           class="btn"
+           data-book-package="Interior Detail">
           REQUEST THIS PACKAGE
         </a>
       </div>
 
-      <!-- PREMIUM INTERIOR -->
+      <!-- PREMIUM -->
       <div class="package">
         <div class="package-icon">💎</div>
-
         <h3>Premium Interior Detail</h3>
 
         <div class="price">
@@ -996,19 +1020,17 @@ footer p {
           <li>Final quality inspection</li>
         </ul>
 
-        <a href="#booking" class="btn btn-outline">
+        <a href="#booking"
+           class="btn"
+           data-book-package="Premium Interior Detail">
           REQUEST THIS PACKAGE
         </a>
       </div>
 
       <!-- FULL DETAIL -->
       <div class="package featured">
-        <div class="package-badge">
-          BEST VALUE
-        </div>
-
+        <div class="package-badge">BEST VALUE</div>
         <div class="package-icon">🏁</div>
-
         <h3>Full Detail</h3>
 
         <div class="price">
@@ -1044,7 +1066,9 @@ footer p {
           SAVE $15 COMPARED TO BOOKING SEPARATELY
         </p>
 
-        <a href="#booking" class="btn btn-red">
+        <a href="#booking"
+           class="btn btn-red"
+           data-book-package="Full Detail">
           REQUEST THIS PACKAGE
         </a>
       </div>
@@ -1084,7 +1108,6 @@ footer p {
 
     <div class="about-text">
       <div class="section-label">Who We Are</div>
-
       <h2 class="section-title">
         ABOUT <span class="red">M2J</span>
       </h2>
@@ -1122,10 +1145,9 @@ footer p {
 <!-- OUR FAITH -->
 <section id="faith">
   <div class="container">
-
     <div class="faith-panel">
-      <div class="faith-cross">✝</div>
 
+      <div class="faith-cross">✝</div>
       <div class="section-label">
         The Foundation of M2J
       </div>
@@ -1168,7 +1190,6 @@ footer p {
       </div>
 
     </div>
-
   </div>
 </section>
 
@@ -1215,11 +1236,10 @@ footer p {
       </div>
 
     </div>
-
   </div>
 </section>
 
-<!-- BOOKING AND QUOTE REQUEST -->
+<!-- BOOKING -->
 <section class="booking" id="booking">
   <div class="container">
 
@@ -1355,10 +1375,7 @@ footer p {
 
           <div class="booking-field">
             <label for="preferredDate">Preferred Date *</label>
-            <input
-              id="preferredDate"
-              type="date"
-              required>
+            <input id="preferredDate" type="date" required>
           </div>
 
           <div class="booking-field">
@@ -1423,7 +1440,6 @@ footer p {
 
       </form>
 
-      <!-- BOOKING SUMMARY -->
       <aside class="booking-aside">
 
         <div class="section-label">
@@ -1520,7 +1536,7 @@ footer p {
 
       <a
         href="mailto:m2jautodeatiling@gmail.com?subject=M2J%20Detailing%20Inquiry"
-        class="btn btn-outline">
+        class="btn">
         EMAIL US
       </a>
 
@@ -1528,7 +1544,7 @@ footer p {
         href="https://www.instagram.com/m2jautodetailing/"
         target="_blank"
         rel="noopener noreferrer"
-        class="btn btn-outline">
+        class="btn">
         MESSAGE ON INSTAGRAM
       </a>
     </div>
@@ -1542,10 +1558,19 @@ footer p {
 <footer>
   <div class="container">
 
-    <img
-      src="m2j-logo.png"
-      alt="M2J Auto Detailing Logo"
-      class="footer-logo">
+    <div class="logo-lockup footer-logo">
+      <svg viewBox="0 0 300 95" aria-hidden="true">
+        <use href="#m2j-car"></use>
+      </svg>
+
+      <div class="logo-wordmark">
+        M<span>2</span>J
+      </div>
+
+      <div class="logo-subtitle">
+        AUTO DETAILING
+      </div>
+    </div>
 
     <p>Driven by Faith. Defined by Quality.</p>
     <p>Colossians 3:23 • Cincinnati, Ohio</p>
@@ -1558,10 +1583,9 @@ footer p {
   </div>
 </footer>
 
-<!-- JAVASCRIPT -->
 <script>
 
-// MOBILE NAVIGATION
+// MOBILE MENU
 
 const menuToggle =
   document.getElementById("menuToggle");
@@ -1588,10 +1612,7 @@ navLinks.querySelectorAll("a").forEach(link => {
   });
 });
 
-// BOOKING ESTIMATE
-
-const bookingForm =
-  document.getElementById("bookingForm");
+// PACKAGE BUTTONS SELECT THE RIGHT SERVICE
 
 const packageSelect =
   document.getElementById("servicePackage");
@@ -1612,9 +1633,19 @@ packageSelect.addEventListener(
   updateEstimate
 );
 
+document.querySelectorAll("[data-book-package]")
+  .forEach(button => {
+    button.addEventListener("click", () => {
+      packageSelect.value =
+        button.getAttribute("data-book-package");
+
+      updateEstimate();
+    });
+  });
+
 updateEstimate();
 
-// SET MINIMUM DATE TO TODAY
+// MINIMUM BOOKING DATE
 
 function localDateString(date) {
   const year = date.getFullYear();
@@ -1629,14 +1660,15 @@ function localDateString(date) {
 document.getElementById("preferredDate").min =
   localDateString(new Date());
 
-// BOOKING EMAIL REQUEST
+// BOOKING EMAIL
+
+const bookingForm =
+  document.getElementById("bookingForm");
 
 bookingForm.addEventListener("submit", event => {
   event.preventDefault();
 
-  if (!bookingForm.reportValidity()) {
-    return;
-  }
+  if (!bookingForm.reportValidity()) return;
 
   const get = id =>
     document.getElementById(id).value.trim();
