@@ -1,11 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#101010">
-  <meta name="description" content="M2J Auto Detailing in Cincinnati, Ohio. Faith-driven, quality-focused automotive detailing.">
+  <meta name="description" content="M2J Auto Detailing in Cincinnati, Ohio. Faith-driven automotive detailing with affordable exterior and interior packages.">
   <title>M2J Auto Detailing | Driven by Faith</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -39,10 +41,19 @@
       line-height: 1.7;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    button { font: inherit; }
-    ::selection { background: var(--red); color: white; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      font: inherit;
+    }
 
     .container {
       width: min(1150px, 90%);
@@ -75,8 +86,13 @@
       margin: 0 auto 45px;
     }
 
-    .center { text-align: center; }
-    .red { color: var(--red); }
+    .center {
+      text-align: center;
+    }
+
+    .red {
+      color: var(--red);
+    }
 
     .btn {
       display: inline-flex;
@@ -86,7 +102,6 @@
       border-radius: 5px;
       font-size: 13px;
       font-weight: 800;
-      letter-spacing: .4px;
       transition: .25s;
       text-align: center;
     }
@@ -111,7 +126,8 @@
       color: var(--red);
     }
 
-    /* Navigation */
+    /* NAVIGATION */
+
     header {
       position: sticky;
       top: 0;
@@ -131,23 +147,23 @@
     .logo {
       font-size: 26px;
       font-weight: 900;
-      letter-spacing: -1px;
       white-space: nowrap;
     }
 
-    .logo span { color: var(--red); }
+    .logo span {
+      color: var(--red);
+    }
 
     .logo-cross {
       color: var(--red);
       font-size: 20px;
-      vertical-align: top;
-      margin-left: 4px;
+      margin-left: 5px;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 23px;
+      gap: 22px;
     }
 
     .nav-links a {
@@ -156,17 +172,14 @@
       transition: color .2s;
     }
 
-    .nav-links a:hover { color: var(--red); }
+    .nav-links a:hover {
+      color: var(--red);
+    }
 
-    .nav-links .nav-contact {
+    .nav-contact {
       background: var(--red);
       padding: 11px 16px;
       border-radius: 4px;
-    }
-
-    .nav-links .nav-contact:hover {
-      background: var(--red-dark);
-      color: white;
     }
 
     .menu-toggle {
@@ -180,9 +193,9 @@
       font-size: 20px;
     }
 
-    /* Hero */
+    /* HERO */
+
     .hero {
-      position: relative;
       min-height: 670px;
       display: flex;
       align-items: center;
@@ -193,8 +206,6 @@
     }
 
     .hero-content {
-      position: relative;
-      z-index: 1;
       padding: 100px 0;
     }
 
@@ -211,13 +222,11 @@
       line-height: 1.07;
       font-weight: 900;
       letter-spacing: -2px;
-      max-width: 900px;
     }
 
     .hero h2 {
       font-size: clamp(17px, 2.5vw, 25px);
       margin: 23px 0 15px;
-      font-weight: 700;
     }
 
     .hero p {
@@ -244,19 +253,19 @@
     }
 
     .hero-verse strong {
-      color: white;
-      font-style: normal;
       display: block;
       margin-top: 7px;
       font-size: 11px;
-      letter-spacing: 1px;
+      color: white;
+      font-style: normal;
     }
 
-    /* Values */
+    /* VALUES */
+
     .values-strip {
       background: #191919;
-      border-bottom: 1px solid #303030;
       padding: 30px 0;
+      border-bottom: 1px solid #303030;
     }
 
     .values-grid {
@@ -278,18 +287,24 @@
       margin-right: 10px;
     }
 
-    /* Services */
+    /* PRICING */
+
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      max-width: 1050px;
+      margin: auto;
     }
 
     .service-card {
+      position: relative;
       background: var(--card);
       border: 1px solid #333;
-      border-radius: 8px;
-      padding: 35px 27px;
+      border-radius: 9px;
+      padding: 35px 30px;
+      display: flex;
+      flex-direction: column;
       transition: .25s;
     }
 
@@ -298,15 +313,53 @@
       transform: translateY(-4px);
     }
 
+    .service-card.featured {
+      border: 2px solid var(--red);
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: -14px;
+      right: 20px;
+      background: var(--red);
+      color: white;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 7px 13px;
+      border-radius: 4px;
+    }
+
     .service-icon {
       font-size: 30px;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
     .service-card h3 {
-      font-size: 19px;
+      font-size: 20px;
       font-weight: 800;
-      margin-bottom: 12px;
+      margin-bottom: 5px;
+    }
+
+    .service-price {
+      font-size: 38px;
+      font-weight: 900;
+      color: var(--red);
+      margin: 12px 0;
+      line-height: 1.3;
+    }
+
+    .service-price sup {
+      font-size: 17px;
+      vertical-align: super;
+    }
+
+    .service-price small {
+      display: block;
+      font-size: 11px;
+      color: #aaa;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     .service-card p {
@@ -319,10 +372,11 @@
       list-style: none;
       color: #d0d0d0;
       font-size: 12px;
+      margin-bottom: 25px;
     }
 
     .service-card li {
-      padding: 5px 0;
+      padding: 6px 0;
     }
 
     .service-card li::before {
@@ -332,14 +386,32 @@
       margin-right: 9px;
     }
 
-    .service-note {
-      text-align: center;
-      margin-top: 35px;
-      color: var(--muted);
-      font-size: 13px;
+    .service-card .btn {
+      margin-top: auto;
+      width: 100%;
     }
 
-    /* About */
+    .pricing-disclaimer {
+      max-width: 850px;
+      margin: 35px auto 0;
+      padding: 24px;
+      border-left: 4px solid var(--red);
+      background: #1c1c1c;
+      border-radius: 4px;
+    }
+
+    .pricing-disclaimer p {
+      font-size: 12px;
+      color: #c5c5c5;
+      line-height: 1.9;
+    }
+
+    .pricing-disclaimer strong {
+      color: var(--red);
+    }
+
+    /* ABOUT */
+
     .about {
       background: #191919;
     }
@@ -373,11 +445,10 @@
       margin-top: 25px;
     }
 
-    /* Faith */
+    /* FAITH */
+
     .faith-section {
-      background:
-        radial-gradient(circle at top right, rgba(229,57,53,.12), transparent 45%),
-        #101010;
+      background: #101010;
     }
 
     .faith-panel {
@@ -394,7 +465,6 @@
     .faith-cross {
       font-size: 45px;
       color: var(--red);
-      line-height: 1;
       margin-bottom: 25px;
     }
 
@@ -420,10 +490,10 @@
       font-size: 12px;
       font-weight: 800;
       margin-top: 12px;
-      letter-spacing: 1px;
     }
 
-    /* Gallery */
+    /* GALLERY */
+
     .gallery {
       background: #191919;
     }
@@ -437,7 +507,6 @@
     .gallery-item {
       overflow: hidden;
       border-radius: 7px;
-      background: #282828;
     }
 
     .gallery-item img {
@@ -451,7 +520,8 @@
       transform: scale(1.05);
     }
 
-    /* Contact */
+    /* CONTACT */
+
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -476,12 +546,7 @@
       color: var(--red);
       margin-bottom: 5px;
       text-transform: uppercase;
-      letter-spacing: 1px;
       font-size: 11px;
-    }
-
-    .contact-detail a:hover {
-      color: var(--red);
     }
 
     .contact-box {
@@ -508,7 +573,8 @@
       margin-top: 12px;
     }
 
-    /* Footer */
+    /* FOOTER */
+
     footer {
       background: #080808;
       border-top: 1px solid #292929;
@@ -522,7 +588,9 @@
       margin-bottom: 8px;
     }
 
-    .footer-logo span { color: var(--red); }
+    .footer-logo span {
+      color: var(--red);
+    }
 
     .footer-slogan {
       color: #ccc;
@@ -537,9 +605,12 @@
       margin-top: 9px;
     }
 
-    /* Mobile */
+    /* MOBILE */
+
     @media (max-width: 850px) {
-      .menu-toggle { display: block; }
+      .menu-toggle {
+        display: block;
+      }
 
       .nav-links {
         display: none;
@@ -555,33 +626,55 @@
         border-bottom: 1px solid #333;
       }
 
-      .nav-links.open { display: flex; }
+      .nav-links.open {
+        display: flex;
+      }
 
       .nav-links a {
         padding: 13px;
       }
 
-      .nav-links .nav-contact {
-        text-align: center;
-        margin-top: 10px;
+      .services-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
       }
 
-      .services-grid { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; gap: 35px; }
-      .contact-grid { grid-template-columns: 1fr; gap: 30px; }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      .about-image img { height: 330px; }
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-image img {
+        height: 330px;
+      }
     }
 
     @media (max-width: 520px) {
-      .section { padding: 65px 0; }
-      .hero { min-height: 630px; }
-      .hero h1 { letter-spacing: -1px; }
-      .values-grid { grid-template-columns: 1fr; gap: 15px; }
-      .gallery-grid { grid-template-columns: 1fr; }
-      .gallery-item img { height: 250px; }
-      .faith-panel { padding: 38px 22px; }
-      .contact-box { padding: 26px; }
+      .section {
+        padding: 65px 0;
+      }
+
+      .hero {
+        min-height: 630px;
+      }
+
+      .values-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item img {
+        height: 250px;
+      }
+
+      .faith-panel {
+        padding: 38px 22px;
+      }
+
+      .contact-box,
+      .service-card {
+        padding: 26px;
+      }
     }
   </style>
 </head>
@@ -589,20 +682,20 @@
 <body>
 
   <!-- NAVIGATION -->
+
   <header>
     <nav class="nav container">
-      <a href="#home" class="logo" aria-label="M2J Auto Detailing home">
+      <a href="#home" class="logo">
         M<span>2J</span><span class="logo-cross">✝</span>
       </a>
 
       <button class="menu-toggle" id="menuToggle"
         aria-label="Toggle navigation"
-        aria-controls="navLinks"
         aria-expanded="false">☰</button>
 
       <div class="nav-links" id="navLinks">
         <a href="#home">Home</a>
-        <a href="#services">Services</a>
+        <a href="#services">Pricing</a>
         <a href="#about">About</a>
         <a href="#faith">Our Faith</a>
         <a href="#gallery">Gallery</a>
@@ -614,37 +707,52 @@
   <main>
 
     <!-- HERO -->
+
     <section class="hero" id="home">
       <div class="container hero-content">
-        <div class="hero-eyebrow">CINCINNATI, OHIO • FAITH-DRIVEN DETAILING</div>
+
+        <div class="hero-eyebrow">
+          CINCINNATI, OHIO • FAITH-DRIVEN DETAILING
+        </div>
 
         <h1>
           M<span class="red">2J</span><br>
           AUTO DETAILING
         </h1>
 
-        <h2>Driven by Faith. <span class="red">Defined by Quality.</span></h2>
+        <h2>
+          Driven by Faith.
+          <span class="red">Defined by Quality.</span>
+        </h2>
 
         <p>
-          Quality automotive detailing built on faith, integrity,
-          and attention to detail. We take pride in treating every
-          vehicle with care and every customer with respect.
+          Quality automotive detailing built on faith,
+          integrity, and attention to detail.
+          We take pride in treating every vehicle
+          with care and every customer with respect.
         </p>
 
         <div class="hero-buttons">
-          <a href="#contact" class="btn btn-primary">BOOK A DETAIL</a>
-          <a href="#services" class="btn btn-outline">EXPLORE SERVICES</a>
+          <a href="#services" class="btn btn-primary">
+            VIEW OUR PRICING
+          </a>
+
+          <a href="#contact" class="btn btn-outline">
+            BOOK A DETAIL
+          </a>
         </div>
 
         <div class="hero-verse">
-          "And whatsoever ye do, do it heartily, as to the Lord,
-          and not unto men."
+          "And whatsoever ye do, do it heartily,
+          as to the Lord, and not unto men."
           <strong>COLOSSIANS 3:23 • KJV</strong>
         </div>
+
       </div>
     </section>
 
     <!-- VALUES -->
+
     <div class="values-strip">
       <div class="container values-grid">
         <div class="value"><span>✝</span> Faith</div>
@@ -653,108 +761,263 @@
       </div>
     </div>
 
-    <!-- SERVICES -->
+    <!-- SERVICES AND PRICING -->
+
     <section class="section" id="services">
       <div class="container">
+
         <div class="center">
-          <div class="section-label">What We Offer</div>
-          <h2 class="section-title">OUR <span class="red">SERVICES</span></h2>
+          <div class="section-label">
+            Professional Auto Detailing
+          </div>
+
+          <h2 class="section-title">
+            OUR <span class="red">PACKAGES & PRICING</span>
+          </h2>
+
           <p class="section-description">
-            Whether your vehicle needs a refresh or a more complete
-            cleaning, we're committed to putting care into every detail.
+            Affordable detailing services with attention
+            to every detail. Choose the package that
+            best fits your vehicle.
           </p>
         </div>
 
         <div class="services-grid">
 
+          <!-- BASIC EXTERIOR -->
+
           <div class="service-card">
             <div class="service-icon">🚘</div>
-            <h3>Exterior Detailing</h3>
+
+            <h3>Basic Exterior Wash</h3>
+
+            <div class="service-price">
+              $45<sup>+*</sup>
+              <small>Starting Price</small>
+            </div>
+
             <p>
-              Give your vehicle a clean, refreshed exterior
-              with careful attention to its finish.
+              Our Basic Exterior Wash is perfect for
+              maintaining your vehicle's appearance.
+              We carefully clean the exterior to remove
+              everyday dirt, dust, and road grime,
+              leaving your car looking refreshed.
             </p>
+
             <ul>
-              <li>Exterior hand wash</li>
+              <li>Thorough exterior hand wash</li>
+              <li>Exterior soap and rinse</li>
               <li>Wheel and tire cleaning</li>
-              <li>Exterior window cleaning</li>
-              <li>Exterior finishing touches</li>
+              <li>Exterior window and mirror cleaning</li>
+              <li>Careful exterior drying</li>
+              <li>Tire dressing for a finished appearance</li>
+              <li>Final exterior inspection</li>
             </ul>
+
+            <a href="#contact" class="btn btn-outline">
+              REQUEST THIS PACKAGE
+            </a>
           </div>
+
+          <!-- INTERIOR DETAIL -->
 
           <div class="service-card">
             <div class="service-icon">✨</div>
-            <h3>Interior Detailing</h3>
+
+            <h3>Interior Detail</h3>
+
+            <div class="service-price">
+              $65<sup>+*</sup>
+              <small>Starting Price</small>
+            </div>
+
             <p>
-              Refresh the inside of your vehicle and make
-              your driving experience more enjoyable.
+              Our Interior Detail is designed to
+              refresh your vehicle's cabin and remove
+              everyday dirt and debris. This package
+              focuses on the main interior surfaces
+              to provide a cleaner and more comfortable
+              driving experience.
             </p>
+
             <ul>
-              <li>Interior vacuuming</li>
-              <li>Dashboard and console cleaning</li>
-              <li>Interior window cleaning</li>
-              <li>Interior surface wipe-down</li>
+              <li>Thorough interior vacuuming</li>
+              <li>Seats and carpet vacuumed</li>
+              <li>Dashboard cleaning</li>
+              <li>Center console cleaning</li>
+              <li>Door panel wipe-down</li>
+              <li>Cupholder cleaning</li>
+              <li>Interior window and mirror cleaning</li>
+              <li>Basic floor mat cleaning</li>
+              <li>Final interior inspection</li>
             </ul>
+
+            <a href="#contact" class="btn btn-outline">
+              REQUEST THIS PACKAGE
+            </a>
           </div>
 
+          <!-- PREMIUM INTERIOR -->
+
           <div class="service-card">
-            <div class="service-icon">🏁</div>
-            <h3>Full Detail</h3>
+            <div class="service-icon">💎</div>
+
+            <h3>Premium Interior Detail</h3>
+
+            <div class="service-price">
+              $120<sup>+*</sup>
+              <small>Starting Price</small>
+            </div>
+
             <p>
-              Our combined interior and exterior service
-              for a more complete vehicle refresh.
+              Our Premium Interior Detail provides
+              a deeper and more thorough cleaning
+              for vehicles that need additional care.
+              This package goes beyond our standard
+              interior service by focusing on harder-to-reach
+              areas, built-up dirt, and interior surfaces
+              requiring more attention.
             </p>
+
             <ul>
-              <li>Interior cleaning</li>
-              <li>Exterior cleaning</li>
-              <li>Wheels and windows</li>
-              <li>Attention to the small details</li>
+              <li>Everything in the Interior Detail</li>
+              <li>Detailed cleaning of interior crevices</li>
+              <li>Thorough cleaning around seat tracks</li>
+              <li>Detailed dashboard and console cleaning</li>
+              <li>Deeper floor mat cleaning</li>
+              <li>Additional carpet attention</li>
+              <li>Appropriate upholstery spot cleaning</li>
+              <li>Detailed door panel cleaning</li>
+              <li>Cleaning of vents and tight spaces</li>
+              <li>Interior finishing touches</li>
+              <li>Final quality inspection</li>
             </ul>
+
+            <a href="#contact" class="btn btn-outline">
+              REQUEST THIS PACKAGE
+            </a>
+          </div>
+
+          <!-- FULL DETAIL -->
+
+          <div class="service-card featured">
+
+            <div class="featured-badge">
+              BEST VALUE
+            </div>
+
+            <div class="service-icon">🏁</div>
+
+            <h3>Full Detail</h3>
+
+            <div class="service-price">
+              $150<sup>+*</sup>
+              <small>Starting Price</small>
+            </div>
+
+            <p>
+              Our Full Detail is our most complete
+              detailing package, combining our
+              Premium Interior Detail with our
+              Basic Exterior Wash.
+              This package is ideal for customers
+              who want their entire vehicle cleaned,
+              refreshed, and given extra attention
+              both inside and out.
+            </p>
+
+            <ul>
+              <li>Everything in Premium Interior Detail</li>
+              <li>Complete interior vacuuming</li>
+              <li>Detailed interior surface cleaning</li>
+              <li>Crevice and hard-to-reach area cleaning</li>
+              <li>Floor mat and carpet attention</li>
+              <li>Appropriate upholstery spot cleaning</li>
+              <li>Complete exterior hand wash</li>
+              <li>Wheel and tire cleaning</li>
+              <li>Interior and exterior window cleaning</li>
+              <li>Careful exterior drying</li>
+              <li>Tire dressing</li>
+              <li>Interior and exterior finishing touches</li>
+              <li>Final vehicle inspection</li>
+            </ul>
+
+            <p>
+              <strong style="color:#e53935;">
+                Save $15 compared to purchasing
+                these packages separately!
+              </strong>
+            </p>
+
+            <a href="#contact" class="btn btn-primary">
+              REQUEST THIS PACKAGE
+            </a>
+
           </div>
 
         </div>
 
-        <p class="service-note">
-          Contact us for service details, pricing, and availability.
-        </p>
+        <!-- PRICING DISCLAIMER -->
+
+        <div class="pricing-disclaimer">
+          <p>
+            <strong>* IMPORTANT PRICING INFORMATION:</strong>
+            All prices listed are starting prices.
+            The vehicle's size, cleanliness, and overall
+            condition will be evaluated on the scheduled
+            date of the detail before any work begins.
+            Additional charges may apply for excessively
+            dirty interiors, heavy stains, excessive
+            pet hair, significant debris, or areas
+            requiring extra time and cleaning.
+            Any additional charges will be explained
+            and discussed with the customer for approval
+            before the detailing service begins.
+          </p>
+        </div>
+
       </div>
     </section>
 
     <!-- ABOUT -->
+
     <section class="section about" id="about">
       <div class="container about-grid">
 
         <div class="about-image">
           <img
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85"
-            alt="Clean modern property exterior"
+            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85"
+            alt="Sports car"
             loading="lazy">
         </div>
 
         <div class="about-text">
           <div class="section-label">Who We Are</div>
+
           <h2 class="section-title">
             ABOUT <span class="red">M2J</span>
           </h2>
 
           <p>
-            M2J Auto Detailing is a Cincinnati-based business
-            founded by three people who share a passion for
-            cars, hard work, and providing quality service.
+            M2J Auto Detailing is a Cincinnati-based
+            business founded by three people who
+            share a passion for cars, hard work,
+            and providing quality service.
           </p>
 
           <p>
-            We believe detailing is about more than making
-            a car look clean. It's about taking pride in our
-            work, being dependable, and building trust with
-            the people we serve.
+            We believe detailing is about more than
+            making a car look clean. It's about
+            taking pride in our work, being dependable,
+            and building trust with the people we serve.
           </p>
 
           <p>
-            As a faith-driven business, we strive to apply
-            Christian values to the way we operate, from
-            the effort we put into each vehicle to the
-            respect we show our customers.
+            As a faith-driven business, we strive
+            to apply Christian values to the way
+            we operate, from the effort we put into
+            each vehicle to the respect we show
+            our customers.
           </p>
 
           <div class="about-highlight">
@@ -766,37 +1029,44 @@
     </section>
 
     <!-- FAITH -->
+
     <section class="section faith-section" id="faith">
       <div class="container">
 
         <div class="faith-panel">
-          <div class="faith-cross" aria-hidden="true">✝</div>
 
-          <div class="section-label">The Foundation of M2J</div>
+          <div class="faith-cross">✝</div>
+
+          <div class="section-label">
+            The Foundation of M2J
+          </div>
 
           <h2 class="section-title">
             OUR <span class="red">FAITH</span>
           </h2>
 
           <p>
-            At M2J Auto Detailing, our Christian faith
-            is an important part of who we are and
-            how we approach our business.
+            At M2J Auto Detailing, our Christian
+            faith is an important part of who
+            we are and how we approach our business.
           </p>
 
           <p>
-            We believe in honoring God through hard work,
-            honesty, integrity, and serving others.
-            Our goal isn't just to deliver a clean car.
-            It's to make sure every customer feels valued,
-            respected, and confident in the service
+            We believe in honoring God through
+            hard work, honesty, integrity,
+            and serving others.
+            Our goal isn't just to deliver a
+            clean car. It's to make sure every
+            customer feels valued, respected,
+            and confident in the service
             they receive.
           </p>
 
           <p>
-            We strive to reflect our values through
-            our actions, treating people fairly and
-            giving our best effort in everything we do.
+            We strive to reflect our values
+            through our actions, treating
+            people fairly and giving our best
+            effort in everything we do.
             Everyone is welcome at M2J.
           </p>
 
@@ -807,26 +1077,34 @@
           <div class="faith-reference">
             1 CORINTHIANS 16:14 • KJV
           </div>
+
         </div>
 
       </div>
     </section>
 
     <!-- GALLERY -->
+
     <section class="section gallery" id="gallery">
       <div class="container">
+
         <div class="center">
-          <div class="section-label">Attention to Detail</div>
+          <div class="section-label">
+            Attention to Detail
+          </div>
+
           <h2 class="section-title">
             OUR <span class="red">GALLERY</span>
           </h2>
+
           <p class="section-description">
-            A look at the automotive style and quality
-            that inspire our work.
+            A look at the automotive style and
+            quality that inspire our work.
           </p>
         </div>
 
         <div class="gallery-grid">
+
           <div class="gallery-item">
             <img
               src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=85"
@@ -847,19 +1125,24 @@
               alt="Modern car exterior"
               loading="lazy">
           </div>
+
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
+
     <section class="section" id="contact">
       <div class="container contact-grid">
 
         <div>
-          <div class="section-label">Get In Touch</div>
+          <div class="section-label">
+            Get In Touch
+          </div>
 
           <h2 class="section-title">
-            READY FOR A <span class="red">CLEAN CAR?</span>
+            READY FOR A
+            <span class="red">CLEAN CAR?</span>
           </h2>
 
           <p class="contact-text">
@@ -893,11 +1176,12 @@
         </div>
 
         <div class="contact-box">
+
           <h3>LET'S GET STARTED</h3>
 
           <p>
             Send us a message with your vehicle,
-            the service you're interested in,
+            the package you're interested in,
             and any questions you have.
           </p>
 
@@ -914,16 +1198,18 @@
             class="btn btn-outline">
             MESSAGE ON INSTAGRAM
           </a>
-        </div>
 
+        </div>
       </div>
     </section>
 
   </main>
 
   <!-- FOOTER -->
+
   <footer>
     <div class="container">
+
       <div class="footer-logo">
         M<span>2J</span> ✝
       </div>
@@ -934,24 +1220,46 @@
 
       <p>Colossians 3:23</p>
       <p>Cincinnati, Ohio</p>
-      <p>&copy; <span id="year"></span> M2J Auto Detailing. All rights reserved.</p>
+
+      <p>
+        &copy; <span id="year"></span>
+        M2J Auto Detailing. All rights reserved.
+      </p>
+
     </div>
   </footer>
 
+  <!-- JAVASCRIPT -->
+
   <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
+    const menuToggle =
+      document.getElementById('menuToggle');
+
+    const navLinks =
+      document.getElementById('navLinks');
 
     menuToggle.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuToggle.textContent = isOpen ? '✕' : '☰';
+      const isOpen =
+        navLinks.classList.toggle('open');
+
+      menuToggle.setAttribute(
+        'aria-expanded',
+        String(isOpen)
+      );
+
+      menuToggle.textContent =
+        isOpen ? '✕' : '☰';
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
+
+        menuToggle.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+
         menuToggle.textContent = '☰';
       });
     });
